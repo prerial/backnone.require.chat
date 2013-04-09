@@ -1,0 +1,11 @@
+.login-block{
+}
+
+.login-block .forgot{
+		font-family: verdana;
+	font-size: 13px;
+	color: #CCCCCC;
+	text-shadow: 2px 1px #101010;
+	width: 356px;
+	margin: 17px 0px 0px 30px;
+}

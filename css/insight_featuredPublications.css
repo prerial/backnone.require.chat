@@ -1,0 +1,177 @@
+/*.Insight #placeMain {
+    position: absolute;
+    top: 103px;
+    left:0;
+    right:0;
+    bottom:34px;
+    background-color: #F6F6F6;
+    background-image: -webkit-linear-gradient(top, #F6F6F6, #B9B9B9);
+    background-image: -moz-linear-gradient(top, #F6F6F6, #B9B9B9);
+    background-image: -ms-linear-gradient(top, #F6F6F6, #B9B9B9);
+}*/
+.fpWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.insightBtn_L, .insightBtn_R {
+    background-image: url('../imgs/insight/leftRightBtns.png');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    overflow: hidden;
+    margin: 278px 0 0 0;
+    cursor: pointer;
+}
+
+.insightBtn_L {
+    background-position: 0 0;
+    left: 16px;
+}
+
+.insightBtn_R {
+    background-position: -40px 0;
+    right: 16px;
+}
+
+ul.featuredPubs {
+    list-style:none;
+    margin: 30px auto 0 auto;
+    padding: 0 0 0 12px;
+    width: 772px;
+}
+
+.pubBox  {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin: 0 12px 12px 0;
+    width: 245px;
+    height: 283px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.75);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.75);
+    box-shadow: 0 1px 3px rgba(0,0,0,.75);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.featured {
+    width: 502px;
+}
+
+/*.pubBox.cio {
+    background: url('../imgs/insight/globe.jpg') 0 0 no-repeat;
+}
+
+.pubBox.advisoryServices {
+    background: url('../imgs/insight/skyline.jpg') 0 0 no-repeat;
+}
+
+.pubBox.investmentResearch {
+    background: url('../imgs/insight/windows.jpg') 0 0 no-repeat;
+}
+.pubBox.fixedIncome {
+    background: url('../imgs/insight/stockTicker.jpg') 0 0 no-repeat;
+}*/
+.dateBar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 92px;
+    height: 31px;
+    background-color: rgba(0,0,0,.5);
+    padding: 14px 16px 0 16px;
+    color: #FFF;
+    font-size: 19px;
+    line-height: 21px;
+    font-weight: bold;
+}
+
+.titleBar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 82px;
+    color: #FFF;
+    font-size: 19px;
+    line-height: 21px;
+    font-weight: 500;
+    padding: 10px 15px 0 15px;
+    background-image: url('../imgs/insight/rightArrow.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.featured .titleBar {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    padding: 10px 45px 0 15px;
+}
+
+.cio .titleBar {
+    background-color: #0072AE; /* Sapphire */
+}
+.advisoryServices .titleBar {
+    background-color: #633068; /* Garnet */
+}
+.investmentResearch .titleBar {
+    background-color: #C18D00; /* Citron */
+}
+.fixedIncome .titleBar {
+    background-color: #4CAFAA; /* Aquamarine */
+}
+
+.bookmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 73px;
+    height: 73px;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+    border-radius: 0 5px 0 0;
+    background-image: url('../imgs/insight/bookmarkSprite.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.cio .bookmark {
+    background-position: 0 0;
+}
+.advisoryServices .bookmark {
+    background-position: 0 -73px;
+}
+.investmentResearch .bookmark {
+    background-position: 0 -146px;
+}
+.fixedIncome .bookmark {
+    background-position: 0 -219px;
+}
+
+.bookmark.on {
+    background-position-x: -73px;
+}
+/*
+.cio .bookmark.on {
+    background-position: -73px 0;
+}
+.advisoryServices .bookmark.on {
+    background-position: -73px -73px;
+}
+.investmentResearch .bookmark.on {
+    background-position: -73px -146px;
+}
+.fixedIncome .bookmark.on {
+    background-position: -73px -219px;
+}*/

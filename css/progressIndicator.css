@@ -1,0 +1,76 @@
+html {
+	color: #444;
+	font-size: 100%;    
+}
+
+body {
+	font-family: Arial;
+	font-size:18px; 
+	background: #ccc;
+}
+
+.progWrap {
+	width: 400px;
+	margin: 80px auto;
+}
+
+.prog {
+	list-style: none;
+	text-align: center;
+}
+
+
+.prog li {
+	display: inline-block;
+	position: relative;
+	width: 46px;
+	height: 46px;
+	margin-right:5px;
+	background: #fff;
+	position: relative;
+	border-radius: 100%;	
+	box-shadow: inset 0px 2px 1px #999;
+}
+
+.prog li:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	right: -12px;
+	top: 15px;
+	border-width: 0;
+	background: #fff;
+	width: 14px;
+	height: 10px;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+	box-shadow: inset 0px 2px 0px #999;
+	z-index: 100;
+}
+
+.prog li:last-child:before {
+	width: 0px;
+	height: 0px;
+}
+
+.prog span {
+	display: block;
+	color: #fff;
+	left: 3px;
+	top: 4px;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	text-decoration:none;
+	background-color: #fff;
+}
+
+.prog .activeState {
+	background-color: #00a5f1;
+}
+

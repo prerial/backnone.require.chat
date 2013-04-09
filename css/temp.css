@@ -1,0 +1,27 @@
+﻿#iv_main .closeNav {
+	transition-duration: 200ms;
+	transform: translate3d(0,0,0);
+	-webkit-transition-duration: 200ms;
+	-webkit-transform: translate3d(0,0,0);
+/*	
+   -moz-animation: moveMainNavLeft 0.2s; 
+   -webkit-animation: moveMainNavLeft 0.2s;
+    -webkit-animation-fill-mode:forwards;  
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+*/
+}
+#iv_main .openNav {
+	transition-duration: 200ms;
+	transform: translate3d(240px,0,0);
+	-webkit-transition-duration: 200ms;
+	-webkit-transform: translate3d(240px,0,0);
+/*	
+	animation: moveMainNavRight 0.2s; 
+   -moz-animation: moveMainNavRight 0.2s; 
+   -webkit-animation: moveMainNavRight 0.2s;
+    -webkit-animation-fill-mode:forwards;  
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+*/
+}

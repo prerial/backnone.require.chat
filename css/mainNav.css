@@ -1,0 +1,125 @@
+.menu {
+	font-size: 19px;
+	height: 100%;
+	min-height: 100%;
+	width: 300px;
+	background: #1b1b1b;
+	float: left;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background:424242;
+	border-bottom: 1px solid #2e2e2e;
+}
+
+.menu ul li {
+	text-indent: 75px;
+	position: relative;
+	display: block;
+	height:34px;
+	text-decoration: none;
+	padding: 10px;
+	margin-bottom:1px;
+	width: 280px;
+	border-top: 1px solid #2e2e2e;
+	border-bottom: 1px solid #000;
+	line-height:35px;
+}
+
+.menu ul li a {
+}
+
+.menu ul li.menu_close {
+	background: #2c2c2c;
+	/*background: #2c2c2c url(../imgs/sideMenu/sprites_sidemenu.png) 20px 10px no-repeat;*/
+}
+
+.menu ul li.menu_dash, .menu ul li.menu_preview {
+	color:#2482b5;
+	background:url(../imgs/sideMenu/sprites_sidemenu.png) 25px -38px no-repeat;
+}
+
+.menu ul li.menu_port {
+	color:#36a7a5;
+	background:url(../imgs/sideMenu/sprites_sidemenu.png) 25px -85px no-repeat;
+}
+
+.menu ul li.menu_insight {
+	color:#b38a14;
+	background: url(../imgs/sideMenu/sprites_sidemenu.png) 25px -135px no-repeat;
+}
+
+.menu ul li.menu_connect {
+	color:#bdbca0;
+	background: url(../imgs/sideMenu/sprites_sidemenu.png) 25px -185px no-repeat;
+}
+
+.menu ul li.menu_opps {
+	color:#99c3a2;
+	background: url(../imgs/sideMenu/sprites_sidemenu.png) 25px -233px no-repeat;
+}
+
+.menu ul li.menu_vault {
+	color:#7d8391;
+	background: url(../imgs/sideMenu/sprites_sidemenu.png) 25px -283px no-repeat;
+}
+
+.menu ul li.menu_book {
+	color:#90157d;
+	background: url(../imgs/sideMenu/sprites_sidemenu.png) 25px -333px no-repeat;
+}
+
+/**  SUB MENU  **/
+
+.menu ul li ul.submenu {
+	display: block;
+	font-size: 16px;
+	float: left;
+}
+
+/*.menu ul li:active  ul.submenu {
+	display: block;
+}*/
+
+
+.menu ul li ul.submenu li {
+	background: #2c2c2c;
+	display:block;
+}
+
+.menu ul li ul.submenu li a {
+	background: none;
+	padding: 0;
+	margin:0;
+	width: 300px;
+}
+
+/**  LINK STATES  **/
+
+.current {
+	height: 60px;
+}
+.color_dash{
+	background: #f3f3f3;
+}
+.color_port{
+	background: #f3f3f3;
+}
+.color_insight{
+	background: #f3f3f3;
+}
+.color_connect{
+	background: #f3f3f3;
+}
+.color_opps{
+	background: #f3f3f3;
+}
+.color_vault{
+	background: #f3f3f3;
+}
+.color_book{
+	background: #f3f3f3;
+}

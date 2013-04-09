@@ -1,0 +1,128 @@
+.Dashboard .myFolder,
+.Preview .myFolder,
+.Portfolio .myFolder,
+.Insight .myFolder,
+.Connect .myFolder,
+.Portfolio .myFolder,
+.Vault .myFolder,
+.Books .myFolder{ display: none;}
+
+
+.myFolder{ position: absolute; top: 104px; height: 240px; width: 100%; background: #eee; }
+.myFolderCover{position: absolute; height: 100%; width: 100%; background:#000; z-index: 9; opacity: 0.6; }
+
+.myFolder  ul {
+	list-style: none;
+}
+
+.myFolder  ul li {
+	float:left;
+	display:block;
+	
+	
+}
+
+.myFund{ 
+	height: 210px; 
+	width: 170px; 
+	background: #000; 
+	margin: 14px 5px;
+	position: relative;
+	border-radius: 8px;
+	
+	box-shadow: 
+  	0 1px 2px #fff, /*bottom external highlight*/
+  	0 -1px 1px #666, /*top external shadow*/ 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(140,140,140,0.5); /*top internal highlight*/	
+}
+.myFund .info-icon{}
+.myFund .doughnut{ 	
+	position: absolute;
+	top: 22px;
+	left: 34px;
+    border: 24px solid #f00;
+    border-radius: 100px;
+    height:50px;
+    width:50px;
+}
+
+
+.myFund.f1 .doughnut{  border-color:#62ad12} 
+.myFund.f2 .doughnut{  border-color: #129dad; } 
+.myFund.f3 .doughnut{  border-color:  #125fad; } 
+.myFund.f4 .doughnut{  border-color: #ad2412; } 
+.myFund.f5 .doughnut{ border-color: #ad2412; } 
+
+
+
+
+.myFund .details{
+	position: absolute;
+	top: 140px;
+	left: 14px;
+	
+}
+.myFund .details .title{
+	font-size: 18px;
+	color: #EEE;
+}
+
+.myFund .details .title-sub{
+	font-size: 15px;
+	color: #AAAAAA;	
+}
+
+.gloss:after{
+    content:'';
+    position:absolute;
+    width:110%;
+    height:45%;
+    top:10%;
+    right:-50%;
+    background:rgba(255,255,255,0.3);/*opera don't support gradient yet*/
+    background:
+        -webkit-gradient(
+        linear,
+        left top, left bottom,
+        from(rgba(255,255,255,0.1)),
+        to(rgba(255,255,255,0.2))
+        );
+    
+    background:
+        -moz-linear-gradient(
+        top,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.3)
+        );
+    background:
+        linear-gradient(
+        top,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.3)
+        );
+    ;
+    /* Webkit */
+    -webkit-transform:rotate(60deg);
+    -webkit-border-bottom-left-radius: 200px 20px;
+    -webkit-border-bottom-right-radius: 200px 10px;
+    -webkit-border-top-right-radius: 5px 100px;
+    /* Firefox */
+    -moz-transform:rotate(60deg);
+    -moz-border-radius-bottomleft:200px 20px;
+    -moz-border-radius-bottomright:200px 10px;
+    -moz-border-radius-topright:5px 100px;
+    /* CSS3 */
+    transform:rotate(60deg);
+    border-bottom-left-radius:200px 20px;
+    border-bottom-right-radius: 200px 10px;
+    border-top-right-radius:5px 100px;
+}
+
+.gloss{
+    position:relative;
+    overflow:hidden;
+}
+​
+
+

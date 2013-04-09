@@ -1,0 +1,44 @@
+<div class="popup chat paused forwards" id="<%= this.id %>">
+    <div class="chat-container">
+
+        <div class="chat-pane-left">
+	        <div class="userContact">
+		            <ul class="resultsButtons"></ul><div class="icon-settings"></div>
+            </div>
+	        <div class="chatToolbar"></div>
+			<div style="height:30px;">
+                <div class="sectionTitle contact-list-title">Contact List</div>
+                <div class="contListButton"></div>
+            </div>
+            <div class="contact panel">
+	            <div class="contactList front"></div>
+	            <div class="contactSearch back" style="margin-top: 0;padding-left:16px;">	   
+                    <div class="contactGroupList" style="margin: 2px;width:300px;height:330px;">
+                     Group Contacts
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='chatDisplaySlider' class='swipe chat-pane-right'>
+          <ul>
+            <li id='chatTalk'></li>
+            <li id='chatGroup'></li>
+            <li id='chatPhone'></li>
+            <li id='chatVideo'></li>
+            <li id='chatSettings'></li>
+            <li id='chatPresence'></li>
+            <li id='chatProfile'></li>
+            <li id='chatEditProfile'></li>
+            <li id='contactInfo'></li>
+            <li id='contactAdd'></li>
+          </ul>
+        </div>
+
+    </div>
+
+	<div class="chat-footer grad" style=''>
+		<span id='webSocketStatus' class="filterTitle" style='color:#212121'>Connected</span>
+	</div>
+
+</div>

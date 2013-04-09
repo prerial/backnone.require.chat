@@ -1,0 +1,320 @@
+table.inviewTable {
+	font-family: Arial; /* interstate */
+	width: 100%;
+	min-width: 1024px;
+	border-spacing: 0;
+	border-collapse:collapse;
+	background:#1A1A1A;
+} 
+
+table.inviewTable th {
+	padding: 20px 12px;
+	border-right: #A1A1A1 solid 1px;
+	border-left: #5B5B5B solid 1px;
+	font-size:11px;
+	color:#2A2A2A;
+	text-align:left;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCCCCC), to(#888888));
+	background-image: -webkit-linear-gradient(top, #CCCCCC, #888888); 
+	background-image: -moz-linear-gradient(top, #CCCCCC, #888888);
+	background-image: -ms-linear-gradient(top, #CCCCCC, #888888);
+	background-image: -o-linear-gradient(top, #CCCCCC, #888888); }
+
+table.inviewTable tr:nth-child(odd) { 
+	background-color:#1A1A1A;
+}
+
+table.inviewTable tr:nth-child(even) { 
+	background-color:#262626;
+}
+
+table.inviewTable td {
+	padding: 17px 20px;
+	border-right: #1A1A1A solid 1px;
+	font-size:12px;
+	color:#FFF;
+}
+
+thead.fixedHeader tr {
+	display: block
+}
+
+.scrollContent{
+	display: block;
+	width: 100%;
+	height: 400px;
+	overflow: auto;
+}
+thead.fixedHeader th {
+	width: 200px
+}
+thead.fixedHeader th + th {
+	width: 240px
+}
+
+thead.fixedHeader th + th + th {
+	width: 316px
+}
+
+tbody.scrollContent td {
+	width: 200px
+}
+
+tbody.scrollContent td + td {
+	width: 240px
+}
+
+tbody.scrollContent td + td + td {
+	width: 300px
+}
+
+#header {
+	position:absolute; z-index:2;
+	top:0; left:0;
+	width:100%;
+	height:45px;
+	line-height:45px;
+	background-color:#d51875;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #fe96c9), color-stop(0.05, #d51875), color-stop(1, #7b0a2e));
+	background-image:-moz-linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);
+	background-image:-o-linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);
+	padding:0;
+	color:#eee;
+	font-size:20px;
+	text-align:center;
+}
+
+#header a {
+	color:#f3f3f3;
+	text-decoration:none;
+	font-weight:bold;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+}
+
+#footer {
+	position:absolute; z-index:2;
+	bottom:0; left:0;
+	width:100%;
+	height:48px;
+	background-color:#222;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #999), color-stop(0.02, #666), color-stop(1, #222));
+	background-image:-moz-linear-gradient(top, #999, #666 2%, #222);
+	background-image:-o-linear-gradient(top, #999, #666 2%, #222);
+	padding:0;
+	border-top:1px solid #444;
+}
+#wrapper-wrapper{
+	position: relative;
+	height: 500px;
+}
+#wrapper {
+	position: absolute;
+	z-index:1;
+	top:104px; bottom:48px; left:0;
+	width:100%;
+	background:#aaa;
+	overflow:auto;
+}
+
+#scroller {
+	position:absolute; z-index:1;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#scroller li {
+	padding:0 10px;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	/*background-color:#fafafa;*/
+	font-size:14px;
+}
+
+.hf-chart{ position: absolute;	
+	width: 100%;
+	height: 90%;
+	margin-top: 30px;
+
+}
+.hf-chart table{
+	margin-left: 60px;
+	margin-top: 40px;
+	width: 50%;
+	height: 80%;
+	
+}
+.hf-chart table tr{	height: 7%; border-bottom: 1px solid #404248 }
+.hf-chart table tr:nth-child(odd) {	background-color:#1A1A1A;}	
+.hf-chart table tr:nth-child(even) {background-color:#262626;}
+
+.hf-chart table tr.y-axis td{ border-top: 1px solid #999999;}
+.hf-chart table tr td{  width: 10%; border-right: 1px solid #404248;}
+.hf-chart table tr td:first-child{ border-right: 1px solid #999999; width: 5%;  color: #bdbdbd; font-size: 13px;}
+.hf-chart table tr td span{position: absolute; display: block; margin-top: -10px;}
+
+.hf-chart table tr.y-axis td span{ margin-top: 67px; margin-left:-6px; color: #bdbdbd; font-size: 13px;}
+
+.doughnuts div { 
+	position: absolute;
+	top: 0px;
+    border: 10px solid #f00;
+    border-radius: 100px;
+    height:20px;
+    width:20px;
+}
+.doughnuts div.on { 
+	-moz-box-shadow: 0 0 3px 3px #fff;
+	-webkit-box-shadow: 0 0 3px 3px #fff;
+	box-shadow: 0 0 3px 3px #fff;
+}
+
+.doughnuts div span { 
+}
+
+.doughnuts div span.folder, .doughnuts div span.lineChart, .doughnuts div span.details { 
+	height: 26px;
+	width: 32px;
+	display: none;
+	z-index:5;
+	position: absolute;
+	top: -3px;
+	left:-6px;
+	
+}
+
+.doughnuts div.on.showSubs span.folder { 
+	display: block;
+		animation: slide-45-out 0.3s; 
+	-moz-animation: slide-45-outn 0.3s; 
+   	-webkit-animation: slide-45-out 0.3s;
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+    background:  url(../imgs/charts/sprites_graph.png) 0px -78px no-repeat;
+	
+}
+
+.doughnuts div.on.showSubs span.lineChart { 
+	display: block;
+		animation: slide-270-out 0.3s; 
+	-moz-animation: slide-270-outn 0.3s; 
+   	-webkit-animation: slide-270-out 0.3s;
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;  
+     background:  url(../imgs/charts/sprites_graph.png) 0px -42px no-repeat;
+	
+}
+.doughnuts div.on.showSubs span.details { 
+	display: block;
+		animation: slide-180-out 0.3s; 
+	-moz-animation: slide-180-outn 0.3s; 
+   	-webkit-animation: slide-180-out 0.3s;
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;  
+	 background:  url(../imgs/charts/sprites_graph.png) 0px -3px no-repeat;
+}
+
+.doughnuts .dn1{ 
+	top: 60px; 
+	left: 320px; 
+	border-color: #ad9c12;
+
+} 
+.doughnuts .dn2{ top: 140px; left: 200px; border-color:#62ad12} 
+.doughnuts .dn3{ top: 120px; left: 120px; border-color: #129dad; } 
+.doughnuts .dn4{ top: 185px; left: 240px; border-color:  #125fad; } 
+.doughnuts .dn5{ top: 200px; left: 330px; border-color: #ad2412; } 
+.doughnuts .dn6{ top: 130px; left: 440px; border-color: #ad2412; } 
+.doughnuts .dn7{ top: 220px; left: 500px; border-color: #125fad; } 
+.doughnuts .dn8{ top: 230px; left: 230px; border-color: #ad2412; } 
+.doughnuts .dn9{ top: 330px; left: 330px; 
+border-color: #62ad12; 
+
+
+	box-shadow: 
+  	2px 1px 2px 1px rgba(29,29,29,0.7), /*bottom external highlight*/
+  	/*0 -1px 1px #eee, /*top external shadow*/ 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(140,140,140,0.5); /*top internal highlight*/
+  	
+
+} 
+
+.legend-left div{
+	font-size: 12px;
+	position: absolute;
+	writing-mode:tb-rl;
+	-webkit-transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	white-space:nowrap;
+	display:block;
+	color: #666666;
+	left: 15px;
+	width:20px;
+	height:20px;
+}
+.legend-left .ll1{
+		top:300px;
+}
+.legend-left .ll2{
+	top: 175px;
+}
+
+
+.legend-bottom div{
+	font-size: 12px;
+
+
+	white-space:nowrap;
+	display:block;
+	color: #666666;
+	top: 640px;
+	width:160px;
+	height:20px;
+	float: left;
+	margin-top:36px;
+}
+.legend-bottom .ll1{
+		left:440px;
+		margin-left: 220px
+}
+.legend-bottom .ll2{
+	left: 205px;
+}
+
+.hf-top{ position: absolute;
+	font: 15px/1 'Trebuchet MS', 'Lucida Sans';
+	padding: 10px 0px;
+	color: #eee;
+	text-decoration: none;
+	text-shadow: 2px 1px #101010;
+	background: #232323;
+	width: 100%;
+	border-bottom: 1px solid #4b4b4b;
+}
+
+.hft-all{
+	margin:0px auto;
+	width: 500px;
+	text-align:center;
+	padding-right: 400px;
+	
+}
+.hft1{ }
+.hft2{ padding-left: 50px;}
+.hf-chart-wrapper{ width: 100%;}

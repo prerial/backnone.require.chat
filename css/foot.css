@@ -1,0 +1,84 @@
+
+.inv_footer {
+	background: #333;
+	height: 34px;
+	width: 100%;
+	min-width: 1024px; 
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.inv_footer ul {
+	list-style: none;
+}
+
+.inv_footer ul li {
+	float:left;
+	display:block;
+	height: 34px;
+}
+
+.inv_footer .user_icon {
+	width: 4.39%;
+	background: url(../imgs/footer/sprites_footer_icons.png) no-repeat 50% 5px;
+	border-right:#333 solid 1px;
+}
+
+.inv_footer .citi_title {
+	color: #666;
+	width: 15.13%;
+	text-align:center;
+	border-right:#333 solid 1px;
+}
+
+.inv_footer .view_mode {
+	margin-left: 20px;
+	color:#FFF;
+	font-style:italic;
+	width: 49.22%;
+	border-right:#333 solid 1px;
+}
+
+.inv_footer .user_name {
+	color:#666;
+	width: 20.5%;	
+	text-align: right;
+}
+
+.inv_footer .settings {
+	width: 4.39%;
+	background: url(../imgs/footer/sprites_footer_icons.png) no-repeat 50% -72px;
+	border-right:#333 solid 1px;
+}
+
+.inv_footer .indicator {
+	width: 4%;
+	background: url(../imgs/footer/sprites_footer_icons.png) no-repeat 50% -143px;
+}
+
+/* ==========================================================================
+   Class for gradients
+   ========================================================================== */
+
+.gradient_footer {
+   /* fallback/image non-cover color */
+   background-color: #121212; 
+
+   /* fallback image */
+   background-image: url(../imgs/footer/bg_footer.gif) repeat-x; 
+
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#000000));
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #333333, #000000); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #333333, #000000);
+ 
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #333333, #000000);
+
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #333333, #000000);
+}

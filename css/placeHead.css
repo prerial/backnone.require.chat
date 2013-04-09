@@ -1,0 +1,401 @@
+#placeHead {
+	background: url(../imgs/header/topNavBg.png) repeat-x;
+	
+	height: 88px;
+	width: 100%;
+	min-width:1024px;
+	padding-top: 16px;
+}
+/*-- Menu Btn, Logo, Place Label  --*/
+#placeHead .nav_1 {
+	float:left;
+	padding-left: 5px;
+	width: 400px;
+}
+#placeHead  ul {
+	list-style: none;
+}
+
+#placeHead ul li {
+	float:left;
+	display:block;
+	height: 54px;
+}
+#placeHead .tools li {
+	width: 54px;
+}
+/*-- Title Bar  --*/
+#placeHead .placeToolbar {
+	height:33px;
+	min-width: 1024px;
+	width: 100%;
+	float:left;
+	font-size:14px;
+	line-height:35px;
+}
+
+#placeHead .placeToolbar ul{
+	float:left;
+	display:block;
+	/* width: 300px; */
+	margin-left: 15px;
+	/* height: 33px; */
+}
+
+#placeHead .topmenu_logo {
+	width: 335px;
+	background: url(../imgs/header/sprites_places.png) 5px -37px no-repeat ;
+}
+
+
+.Dashboard #placeHead .topmenu_logo, .Preview #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px 10px no-repeat ;
+}
+
+.Book #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px -290px no-repeat ;
+}
+
+
+.Insight #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px -86px no-repeat ;
+}
+
+.Connect #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px -135px no-repeat ;
+}
+
+.Opportunities #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px -187px no-repeat ;
+}
+
+.Vault #placeHead .topmenu_logo {
+	background: url(../imgs/header/sprites_places.png) 5px -240px no-repeat ;
+}
+
+
+#placeHead .backBtn {
+	width:45px;
+}
+
+#placeHead .titleBar_icon {
+	width:45px;
+	height: 33px;
+	background: url(../imgs/header/sprites_topmenu_nav_combined.png) -140px -49px no-repeat ;
+}
+
+#placeHead .titleBar_userAndLabel {
+	height: 33px;
+	width: 255px;
+	font-weight: bold;
+	text-shadow: 0 1px 2px #1b1b1b;
+}
+
+.Portfolio #placeHead .titleBar_userAndLabel {
+	text-shadow: 0 1px 2px #006666;
+}
+
+#header_portfolio span.titleBar_user {
+	color:#FFF;
+}
+
+#header_portfolio span.titleBar_label {
+	color:#7ad7dc;
+}
+
+/*-- Top Menu Nav  --*/
+#placeHead .tools {
+	float:right;
+	width: 378px;
+	height:54px;
+}
+
+/**  Message/Update Notifications Numbers **/
+#placeHead .tools .pips {
+	color:#F00;
+	font-size:12px;
+	text-align:left;
+	display:block;
+	padding: 0 2px;
+	margin: 30px 0 0 33px;
+	width: 20px;
+}
+
+/* ==========================================================================
+   On and Off buttons
+   ========================================================================== */
+
+
+/* change file to 'sprites_topmenu_nav_off.png' for all buttons in 'off' mode */
+#placeHead .topmenu_menuBtn_off {
+	width: 54px;
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat 0px -3px;
+}
+
+#placeHead .topmenu_menuBtn_on{
+	width: 54px;
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -60px -3px;
+}
+
+#placeHead .topmenu_relNav {
+	background: url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -45px;
+}
+
+#placeHead .topmenu_trans{
+	background: url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -90px;
+}
+
+#placeHead .topmenu_opps {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -135px;
+}
+
+#placeHead .topmenu_alerts {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -179px;
+}
+
+#placeHead .topmenu_chat {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -227px;
+}
+
+#placeHead .topmenu_folder {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -275px;
+}
+
+#placeHead .topmenu_search {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -321px; 
+}
+
+/* ==========================================================================
+   Places Color Schemes
+   ========================================================================== */
+
+/**  Dashboard  **/
+#header_dashboard .color_dash{background: #1E90CE;}
+#header_dashboard .txtColor_dash {color: #1C90C9;}
+#header_dashboard .subHeader_dash {background: #134662;}
+
+
+/**  Portfolio  **/
+#header_portfolio .color_port{background: #3CACA0;}
+#header_portfolio .txtColor_port {color: #36A7A5;}
+#header_portfolio .subHeader_port {background: #20534D;}
+
+#placeBar .gradient_titleBar {
+   /* fallback/image non-cover color */
+   background-color: #3CACA0; 
+   /* fallback image */
+   background-image: url(../imgs/header/bg_header_titlebar.gif) repeat-x; 
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3BACA8), to(#32938F));
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #3BACA8, #32938F); 
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #3BACA8, #32938F);
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #3BACA8, #32938F);
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #3BACA8, #32938F);
+}
+
+.Portfolio #placeBar .gradient_titleBar {
+   /* fallback/image non-cover color */
+   background-color: #3CACA0; 
+   /* fallback image */
+   background-image: url(../imgs/header/bg_header_titlebar.gif) repeat-x; 
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3BACA8), to(#32938F));
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #3BACA8, #32938F); 
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #3BACA8, #32938F);
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #3BACA8, #32938F);
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #3BACA8, #32938F);
+}
+
+.Book #placeBar .gradient_titleBar {
+   /* fallback/image non-cover color */
+   background-color: #6e145f; 
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #93157d, #6e145f); 
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #93157d, #6e145f);
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #93157d, #6e145f);
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #93157d, #6e145f);
+}
+
+.Dashboard #placeBar .gradient_titleBar, .Preview #placeBar .gradient_titleBar { background: #1b7eaf }
+.Insight #placeBar .gradient_titleBar { background: #b38a14}
+.Connect #placeBar .gradient_titleBar { background: #bdbca0 }
+.Opportunities #placeBar .gradient_titleBar { 
+
+   /* fallback/image non-cover color */
+   background-color: #3CACA0; 
+   /* fallback image */
+   background-image: url(../imgs/header/bg_header_titlebar.gif) repeat-x; 
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#99c3a2), to(#85aa8d));
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #99c3a2, #85aa8d); 
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #99c3a2, #85aa8d);
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #99c3a2, #85aa8d);
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #99c3a2, #85aa8d);
+
+ }
+.Vault #placeBar .gradient_titleBar { background: #7d8391 }
+
+
+/**  Insight  **/
+#header_insight .color_insight{background: #B58B15;}
+#header_insight .txtColor_insight {color: #B38A14;}
+#header_insight .subHeader_insight {background: #57440D;}
+
+/**  Connect  **/
+#header_connect .color_connect{background: #BAB8A3;}
+#header_connect .txtColor_connect {color: #B9B89A;}
+.subHeader_connect {background: #5C5A51;}
+
+/**  Opportunities  **/
+#header_opportunities .color_opps{background: #BDB9A0;}
+#header_opportunities .txtColor_opps {color: #98C1A1;}
+#header_opportunities .subHeader_opps {background: #4E5F51;}
+
+/**  Vault  **/
+#header_vault .color_vault{background: #808692;}
+#header_vault .txtColor_vault {color: #7D8391;}
+#header_vault .subHeader_vault {background: #404248;}
+
+/**  Book  **/
+#header_book .color_book{background: #90157D;}
+#header_book .txtColor_book {color: #90157D;}
+#header_book .subHeader_book {background: #4D2148;}
+
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+#placeBar .buttons-sub{ float: right; margin-right: 20px;}
+#placeBar ul.button {
+	margin: 3px 0px 0px 8px;
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid #00180f;
+	box-shadow: 
+  	/*0 1px 2px #fff, /*bottom external highlight*/
+  	/*0 -1px 1px #666, /*top external shadow*/ 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#08948f), to(#007a75));
+	color: #CCCCCC;
+}
+#placeBar ul.button li{
+	height: 25px;
+	border-right: 1px solid #00180f;
+}
+
+#placeBar ul.button li:last-child{
+	border-right: none;
+}
+
+#placeBar ul.button li span{
+	line-height: 25px;
+	font-weight: 600;
+	font-family: verdana;
+	text-shadow: 1px 1px #101010;
+	display: table-cell; 
+	vertical-align: middle; 
+	text-align: center;
+	padding: 0 10px; 
+} 
+ 
+ 
+/* place specific colors */ 
+.Dashboard #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#1b7eaf), to(#15668e));
+}
+
+.Portfolio #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#08948f), to(#007a75));
+}
+
+.Insight #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#b38a14), to(#9a7712));
+}
+
+.Connect #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#bdbca0), to(#a09f88));
+}
+
+.Opportunities #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#99c3a2), to(#85aa8d));
+}
+
+.Vault #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#7d8391), to(#6a6f7b));
+}
+
+.Book #placeBar ul.button {
+	border: 1px solid #00180f;
+	box-shadow: 
+  	inset 0 -1px 1px rgba(50,50,50,0.5), /*bottom internal shadow*/ 
+  	inset 0 1px 1px rgba(110,110,110,0.5); /*top internal highlight*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#90157d), to(#7a126a));
+}
+
+
+
+
+ 
+
+#placeBar ul.button li span{
+	height: 30px;
+	width: 20px;
+}
+
+#placeBar ul.button li span.subnav_camera{
+	background: url(../imgs/header/sprites_subnav.png) 12px -202px no-repeat;
+}
+ .desktop #placeBar ul.button {display: none; } 
+
+#placeBar ul.button li span.subnav_vid{
+	background: url(../imgs/header/sprites_subnav.png) 12px -24px no-repeat;
+}
+
+ 
+#placeBar ul.button li span.subnav_chat{
+	background: url(../imgs/header/sprites_subnav.png) 12px -173px no-repeat;
+}
+ 
+
+

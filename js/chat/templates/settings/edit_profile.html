@@ -1,0 +1,87 @@
+<div class="chatSection">
+    <div>
+	    <div class="sectHeader grad pageTitle" style="text-align:left">
+		    <span class="bolded" style="padding-left:24px;font-size:16px;color: #fff">Edit Profile</span>
+	    </div>
+	    <div class="selection-box-nav">
+            <div>
+                <div class="btn btn-grey btn-cancel" style="float:left">Cancel</div>
+                <div class="btn btn-blue btn-done" style="float:right">Done</div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+	<div class="selection-box name" style="background:#DADEE6;margin-top:24px">
+        <div class="content">
+                <section><label style="width:100px">First Name:</label><input id="profile_firstname" type="text" placeholder="First Name Input" value="<%=user.profile.firstname %>"></section>
+                <section><label style="width:100px">Middle Name:</label><input id="profile_midname" type="text" placeholder="Middle Name Input" value="<%=user.profile.midname %>"></section>
+                <section class="no-border"><label style="width:100px">Last Name:</label><input id="profile_lastname" type="text" placeholder="Last Name Input" value="<%=user.profile.lastname %>"></section>
+        </div>
+    </div>
+	<div class="selection-box gender" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section class="settings-gender settings-male" gender="male"><label style="width:100px">Male</label></section>
+                <section class="settings-gender settings-female no-border" gender="female"><label style="width:100px">Female</label></section>
+        </div>
+    </div>
+	<div class="selection-box state" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section class="no-border"><label style="width:120px">State/Province:</label><input id="profile_state" type="text" placeholder="State/Province Input" value="<%=user.profile.state %>"></section>
+        </div>
+    </div>
+	<div class="selection-box city" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section class="no-border"><label style="width:100px">City:</label><input id="profile_city" type="text" placeholder="City Input" value="<%=user.profile.city %>"></section>
+        </div>
+    </div>
+	<div class="selection-box location" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section class="no-border"><label style="width:100px">Location:</label><input id="profile_location" type="text" placeholder="Location Input" value="<%=user.profile.location %>"></section>
+        </div>
+    </div>
+	<div class="selection-box email" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section class="no-border"><label style="width:100px">Email:</label><input id="profile_email" type="email" placeholder="Location Input" value="<%=user.profile.email %>"></section>
+        </div>
+    </div>
+	<div class="selection-box phones" style="background:#DADEE6;margin-top:24px;">
+        <div class="content">
+                <section><label style="width:100px">Home:</label><input id="profile_phones_home" type="tel" placeholder="Phone Input" value="<%=user.profile.phones.home %>"></section>
+                <section><label style="width:100px">Office:</label><input id="profile_phones_office" type="tel" placeholder="Phone Input" value="<%=user.profile.phones.office %>"></section>
+                <section class="no-border"><label style="width:100px">Mobile:</label><input id="profile_phones_mobile" type="tel" placeholder="Phone Input" value="<%=user.profile.phones.mobile %>"></section>
+        </div>
+    </div>
+	<div id="countryScroll" class="selection-box country" style="position:absolute;background:#DADEE6;overflow:auto;width:370px;height:370px">
+        <div class="content" style="background:#DADEE6;width:304px;background:#fff;display:inline-block">
+                <div class="settings-country" country='USA'><section class="bolded">United States</section></div>
+                <div class="settings-country" country='Afghanistan'><section class="bolded">Afghanistan</section></div>
+                <div class="settings-country" country='Albania'><section class="bolded">Albania</section></div>
+                <div class="settings-country" country='Algeria'><section class="bolded">Algeria</section></div>
+                <div class="settings-country" country='Andorra'><section class="bolded">Andorra</section></div>
+                <div class="settings-country" country='Angola'><section class="bolded">Angola</section></div>
+                <div class="settings-country" country='Anguilla'><section class="bolded">Anguilla</section></div>
+                <div class="settings-country" country='Argentina'><section class="bolded">Argentina</section></div>
+                <div class="settings-country" country='Armenia'><section class="bolded">Armenia</section></div>
+                <div class="settings-country" country='Aruba'><section class="bolded">Aruba</section></div>
+                <div class="settings-country" country='Australia'><section class="bolded">Australia</section></div>
+                <div class="settings-country" country='Austria'><section class="bolded">Austria</section></div>
+                <div class="settings-country" country='Azerbaijan'><section class="bolded">Azerbaijan</section></div>
+                <div class="settings-country" country='Bahamas'><section class="bolded">Bahamas</section></div>
+                <div class="settings-country" country='Bahrain'><section class="bolded">Bahrain</section></div>
+                <div class="settings-country" country='Bangladesh'><section class="bolded">Bangladesh</section></div>
+                <div class="settings-country" country='Barbados'><section class="bolded">Barbados</section></div>
+                <div class="settings-country" country='Belarus'><section class="bolded">Belarus</section></div>
+                <div class="settings-country" country='Belgium'><section class="bolded">Belgium</section></div>
+                <div class="settings-country" country='Belize'><section class="bolded">Belize</section></div>
+                <div class="settings-country" country='Benin'><section class="bolded">Benin</section></div>
+                <div class="settings-country" country='Bermuda'><section class="bolded">Bermuda</section></div>
+                <div class="settings-country" country='Bhutan'><section class="bolded">Bhutan</section></div>
+                <div class="settings-country" country='Bolivia'><section class="bolded">Bolivia</section></div>
+                <div class="settings-country" country='Bonaire'><section class="bolded">Bonaire</section></div>
+                <div class="settings-country" country='Botswana'><section class="bolded">Botswana</section></div>
+                <div class="settings-country" country='Brazil'><section class="bolded">Brazil</section></div>
+                <div class="settings-country" country='Brunei'><section class="bolded">Brunei</section></div>
+                <div class="settings-country no-border" country='Bulgaria'><section class="bolded">Bulgaria</section></div>
+        </div>
+    </div>
+</div>

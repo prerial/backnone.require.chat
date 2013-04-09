@@ -1,0 +1,11 @@
+<ul style='list-style-type: none;'>
+        <%_.each(data, function(contact) {
+            var arg = contact.attributes.profile;
+         %>  
+        
+    <li>
+                <div style="width:320px;margin:4px 0;float:left;height:40px;"><div class="presence <%=contact.attributes.presence %> gender_<%=arg.gender %>" style="background-image:url(<%=contact.attributes.avatar %>);backgrounf-size:40px 40px;height:40px;width:40px;background-size: contain;"></div><div class="contactTitle bolded"><%=arg.firstname %> <%=arg.midname %> <%=arg.lastname %></div><div></div>
+    </li>
+        
+         <%})%>
+</ul>
