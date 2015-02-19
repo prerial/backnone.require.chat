@@ -1,0 +1,52 @@
+                <div class="chatSection" style="width:396px;height:470px;">
+	                <div class="sectHeader grad pageTitle" style="padding-left:36px;text-align:left">
+		                <span class="bolded" style="font-size:16px;color: #fff">Contact Information</span>
+	                </div>
+<div class="contact-info-container" style="height:400px;padding-top:30px;">
+    <div class="align-center align-middle">
+        <table class="table-display" border="0" cellpadding="4" cellspacing="4">
+	        <tr style="width:100px;height:100px;">
+		        <td><div style="border:8px solid #fff;padding-left:0;background:url(<%=user.avatar %>) center no-repeat;background-size:100px 100px;width:100px;height:100px;"></div></td>
+                <td style="height:100px;vertical-align:top;">
+        <table style="margin-top:20px" border="0" cellpadding="4" cellspacing="4">
+            <tr><td class="bolded" style="text-align: right;">First Name:</td><td><%=user.profile.firstname %></td></tr>
+            <tr><td class="bolded" style="text-align: right;">Middle Name:</td><td><%=user.profile.midname %></td></tr>
+            <tr><td class="bolded" style="text-align: right;">Last Name:</td><td><%=user.profile.lastname %></td></tr>
+        </table>
+                </td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="margin-top:20px;text-align: right;">Gender:</td><td><%=user.profile.gender %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="text-align: right;">Country:</td><td><%=user.profile.country %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="text-align: right;">State:</td><td><%=user.profile.state %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="text-align: right;">City:</td><td><%=user.profile.city %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="text-align: right;">Location:</td><td><%=user.profile.location %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="text-align: right;">Email:</td><td><%=user.profile.email %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded">Phones</td><td></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="margin-left:10px;text-align: right;">Office:</td><td><%=user.profile.phones.office %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="margin-left:10px;text-align: right;">Home:</td><td><%=user.profile.phones.home %></td>						
+	        </tr>
+	        <tr>
+		        <td class="bolded" style="margin-left:10px;text-align: right;">Mobile:</td><td><%=user.profile.phones.modal %></td>						
+	        </tr>
+        </table>
+    
+    </div>
+</div>
+                </div>

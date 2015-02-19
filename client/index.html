@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat15 Communication Center</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link href="css/chat-messages.css" rel="stylesheet" type="text/css" />
+        <link href="css/common.css" rel="stylesheet" type="text/css" />
+        <link href="css/buttons.css" rel="stylesheet" type="text/css" />
+        <link href="css/comcenter.css" rel="stylesheet" type="text/css" />
+
+<!--        <script src="libs/firebase/firebase-debug.js" type="text/javascript"></script> -->
+        <script data-main="js/main" src="libs/require/require.js"></script>
+</head>
+<body>
+<style>
+#placeHead_Topbar .tools {
+    position:absolute;
+    left: 0px;
+    top:0px;
+    width: 54px;
+    height:54px;
+}
+#placeHead_Topbar .tools li {
+    width: 54px;
+    height: 54px;
+    cursor:pointer;
+    border:0px solid red;
+}
+#placeHead_Topbar .topmenu_chat {
+    background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -227px;
+    background:  url(imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -227px;
+}
+</style>
+<div id="iv_app" style="float:left;">
+    <div id="iv_main" style="float:left;">
+        <div id="placeHead_Topbar" style="float:left;">
+            <ul class="tools" style="float:left;left:0;border:0px solid red">
+                <li class="topmenu_chat" style="display:none;float:left;"></li><br />
+                <li class="topmenu_chat topmenu_remove" style="display:none;float:left;"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="comcenter" class="comcenter" style="border:2px solid red"></div>
+
+</body>
+</html>

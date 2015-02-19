@@ -1,0 +1,51 @@
+﻿        <div class="dialog-box-title">
+            <% if(mode == 'login'){ %>
+            Sign In
+            <%} %>
+            <% if(mode == 'confirm'){ %>
+            Comcenter Confirm
+            <%} %>
+            <% if(mode == 'alert'){ %>
+            Comcenter Alert
+            <%} %>
+        </div>
+        <div class="dialog-box-content" style="border:0px solid red">
+            <% if(mode == 'login'){ %>
+            <div class="inlay">
+                <select id="username">
+                    <option type="text" value="john.doe@citi.com">John Doe</option>
+                    <option type="text" value="jane.doe@citi.com">Jane Doe</option>
+                    <option type="text" value="jack.doe@citi.com">Jack Doe</option>
+                    <option type="text" value="norman.spinrad@citi.com">Norman Spinrad</option>
+                    <option type="text" value="alice.snyder@citi.com">Alice Snyder</option>
+                    <option type="text" value="charles.snyder@citi.com">Charles Snyder</option>
+                    <option type="text" value="jane.smith@citi.com">Jane Smith</option>
+                </select>
+            </div>
+            <div class="inlay"><input type="text" value="Password" id="password"></div>
+            <div class="button boxcenter signin"><div>Sign In</div></div>
+            <%} %>
+            <% if(mode == 'confirm'){ %>
+            	<div class="boxcenter" style="width:100%;height:100px;margin:0px 0;border:0px solid red">
+					<%=text %>
+            	</div>
+            	<div  style="position:absolute;bottom:40px;float:left;width:360px;border:0px solid red">
+            	<table>
+            		<tr>
+            			<td>
+            				<div class="button boxcenter confirm" style="width:170px;"><div>OK</div></div>
+            			</td>
+            			<td>
+            				<div class="button boxcenter cancel" style="width:170px"><div>Cancel</div></div>
+            			</td>
+            		</tr>
+            	</table>
+            	</div>
+            <%} %>
+            <% if(mode == 'alert'){ %>
+            	<div class="boxcenter" style="width:100%;height:100px;margin:0px 0;border:0px solid red">
+					<%=text %>
+            	</div>
+            	<div class="button boxcenter alert"><div>OK</div></div>
+            <%} %>
+        </div>

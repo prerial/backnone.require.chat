@@ -1,0 +1,29 @@
+<div class="chatSection" style="width:398px;margin-left:2px;">
+	<div class="sectHeader grad pageTitle" style="width:398px;float:left;margin:0;">
+		<div class="bolded" style="float:left;font-size:16px;padding-left:36px;color: #fff">Profile</div>
+        <div class="btn btn-grey btn-cancel" style="float:right;margin:0 60px 42px 0;">Back</div>
+	</div>
+    <div class="clear"></div>
+	<div class="selection-box" style="background:#DADEE6;cursor:pointer;margin-top:24px;">
+        <div class="content">
+                <section class="select-icon" section="name"><label style="width:100px">Full Name:</label><span class=""><%=user.profile.firstname %> <%=user.profile.midname %> <%=user.profile.lastname %></span></section>
+                <section class="select-icon no-border" section="gender"><label style="width:100px">Gender:</label><span class=""><%=user.profile.gender %></span></section>
+        </div>
+    </div>
+    <div class="clear"></div>
+	<div class="selection-box" style="background:#DADEE6;cursor:pointer;">
+        <div class="content">
+                <section class="select-icon" section="country"><label style="width:100px">Country:</label><span><%=user.profile.country %></span></section>
+                <section class="select-icon" section="state"><label style="width:100px">State:</label><span><%=user.profile.state %></span></section>
+                <section class="select-icon" section="city"><label style="width:100px">City:</label><span><%=user.profile.city %></span></section>
+                <section class="select-icon no-border" section="location"><label style="width:100px">Location:</label><span><%=user.profile.location %></span></section>
+        </div>
+    </div>
+    <div class="clear"></div>
+	<div class="selection-box" style="background:#DADEE6;cursor:pointer;">
+        <div class="content">
+                <section class="select-icon" section="email"><label style="width:100px">Email:</label><span><%=user.profile.email %></span></section>
+                <section class="select-icon no-border" section="phones"><label style="width:100px">Phones:</label><span><%=user.profile.phones.office %></span></section>
+        </div>
+    </div>
+</div>
