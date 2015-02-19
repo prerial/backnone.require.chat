@@ -1,7 +1,7 @@
 {
-  "name"         : "node-angular-mongodb",
+  "name"         : "node-backbone-socket.io",
   "version"      : "0.0.0",
-  "description"  : "Simple a application.",
+  "description"  : "Communication Center application.",
   "main"         : "server.js",
   "license"       : "MIT",
   "author"       : "MG",
