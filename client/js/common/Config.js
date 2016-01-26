@@ -5,7 +5,7 @@ var FOOTER_HEIGHT = 26;
 
 var RTCPeerConnection = window.mozRTCPeerConnection || window.webkitRTCPeerConnection || window.RTCPeerConnection;
 var RTCSessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
-var RTCIceCandidate = window.RTCIceCandidate;
+var RTCIceCandidate =  window.mozRTCIceCandidate || window.RTCIceCandidate;
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 window.brURL = window.webkitURL || window.URL;
 window.MediaStream = window.MediaStream || window.webkitMediaStream;

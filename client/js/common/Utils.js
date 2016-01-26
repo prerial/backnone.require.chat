@@ -9,7 +9,7 @@ function (require, $, Backbone, _, App) {
 
 	function onMediaError(e) {
 		console.error('Error:', e.name, e.message);
-	};
+	}
 
     var utils = {
         mediaRoom: function () {
@@ -19,7 +19,6 @@ function (require, $, Backbone, _, App) {
 			this.localContainer = $('#' + args.localcontainer);
 			this.remoteContainer = $('#' + args.remotecontainer);
 			this.miniContainer = $('#' + args.minicontainer);
-            this.initialized = false;
 
             this.initialize = function () {
 				_this.localStream = null;
@@ -30,9 +29,7 @@ function (require, $, Backbone, _, App) {
 				_this.peers = {};
             };
 
-            this.gotLocalStream = function (stream) {
-                debugger
-            };
+            this.gotLocalStream = function (stream) {};
 
             this.start = function (param) {
              	_this.initialized = false;
@@ -44,7 +41,6 @@ function (require, $, Backbone, _, App) {
             };
 
             this.call = function () {
-                var arg = arguments[0];
                 console.debug("================== Starting ==========================");
                 console.log('Creating PeerConnection.');
                 createPeerConnection();
@@ -68,15 +64,14 @@ function (require, $, Backbone, _, App) {
                     console.log('Failed to create PeerConnection, exception: ' + e.message);
                     alert('Cannot create RTCPeerConnection object; \
             		WebRTC is not supported by this browser.');
-                    return;
                 }
-            };
+            }
 
             this.doAnswer = function () {
                 console.debug('Sending answer to peer.');
                 _this.peers[_this.user].createAnswer(setLocalAndSendMessage, onMediaError, InviewApp.Config.Constrains.MediaConstraints[_this.type]);
 				console.debug('Sending answer to peer, with constraints:', InviewApp.Config.Constrains.MediaConstraints[_this.type]) ;
-            }
+            };
 
             function setLocalAndSendMessage(sessionDescription) {
                 _this.peers[_this.user].setLocalDescription(sessionDescription);
@@ -84,14 +79,14 @@ function (require, $, Backbone, _, App) {
 				data.type = _this.type + sessionDescription.type;
 				data.sdp = sessionDescription.sdp;
                 sendMessage(data);
-            };
+            }
 
             function sendMessage(message) {
                 var msgString = JSON.stringify(message);
                 console.log('C->S: ', message.sdp? message.sdp: message);
                 console.log('=======================================');
                 App[_this.type][_this.type + 'Socket'].send(message);
-            };
+            }
 
             function onIceCandidate(event) {
                 if (event.candidate) {
@@ -104,7 +99,7 @@ function (require, $, Backbone, _, App) {
                 } else {
                     console.log('End of candidates.');
                 }
-            };
+            }
 
             this.reattachMediaStream = function (to, from) {
                 to.src = from.src;
@@ -121,7 +116,6 @@ function (require, $, Backbone, _, App) {
 					try{
 						_this.remoteContainer.append(mediaElement);
 					} catch (ex) {
-						debugger
 					}
 					_this.remoteStream = event.stream;
                 }else{
@@ -129,11 +123,11 @@ function (require, $, Backbone, _, App) {
 					_this.remoteStream = event.stream;
                 }
                 waitForRemoteVideo();
-            };
+            }
 
             function onRemoteStreamRemoved(event) {
                 console.log('Remote stream removed.');
-            };
+            }
 
             this.hangup = function () {
                 if (_this.remoteStream !== null) {
@@ -166,32 +160,36 @@ function (require, $, Backbone, _, App) {
                     App.video.moderator = false;
                     _this.isAudioMuted = false;
                     _this.isVideoMuted = false;
-					try{
-						console.debug("Remote Stream: ", _this.remoteStream);
-						console.debug("Connection: ", _this.peers[_this.user]);
-						if(_this.remoteStream.stop) _this.remoteStream.stop();
-						_this.remoteStream = null;
-						delete _this.remoteStream;
-						_this.localStream.stop();
-						_this.localStream = null;
-						delete _this.localStream;
-						_this.peers[_this.user].close();
-						_this.peers[_this.user] = null;
-						console.debug('Remove peer');
-					}catch(ex){
-					}
-					$('#localVideo')[0].src = "";
-					$('#miniVideo')[0].src = "";
-					_this.remoteContainer.find('video').remove();
-					_this.localContainer.css('opacity', 1);
-					if(_this.miniContainer !== null) _this.miniContainer.css('opacity', 1);
-					App.eventManager.trigger('setPresence', 'online');
+                    try{
+                        console.debug("Remote Stream: ", _this.remoteStream);
+                        console.debug("Connection: ", _this.peers[_this.user]);
+                        if(_this.remoteStream.stop) _this.remoteStream.stop();
+                        var loctracks = _this.localStream.getTracks();
+                        loctracks.forEach(function(track){
+                            track.stop();
+                        });
+                        _this.remoteStream = null;
+                        delete _this.remoteStream;
+                        _this.localStream.stop();
+                        _this.localStream = null;
+                        delete _this.localStream;
+                        _this.peers[_this.user].close();
+                        _this.peers[_this.user] = null;
+                        console.debug('Remove peer');
+                    }catch(ex){
+                    }
+                    $('#localVideo')[0].src = "";
+                    $('#miniVideo')[0].src = "";
+                    _this.remoteContainer.find('video').remove();
+                    _this.localContainer.css('opacity', 1);
+                    if(_this.miniContainer !== null) _this.miniContainer.css('opacity', 1);
+                    App.eventManager.trigger('setPresence', 'online');
                     console.debug('Session terminated.');
                     console.debug("================== End ==========================");
                     _this.initialized = true;
-					_this.initialize();
-				}
-            };
+                    _this.initialize();
+                }
+            }
 
             function waitForRemoteVideo() {
                 videoTracks = _this.remoteStream.getVideoTracks();
@@ -205,14 +203,14 @@ function (require, $, Backbone, _, App) {
 					}
 				}catch(ex){
 				}
-            };
+            }
 
             function transitionToActive() {
 				_this.remoteContainer.css('display', 'block').css('opacity', 1);
                 if(_this.miniContainer !== null) {
                 	_this.miniContainer.css('opacity', 1).css('width', '110px')
 				}
-            };
+            }
 
             function transitionToWaiting() {
 				if(_this.miniContainer !== null) _this.miniContainer.css('width', '0px');
@@ -229,7 +227,7 @@ function (require, $, Backbone, _, App) {
                     if(miniVideo && miniVideo.src) miniVideo.src = '';
                     if(remoteVideo && remoteVideo.src) remoteVideo.src = '';
                 }, 1000);
-            };
+            }
 /*
             $(window).on('beforeunload', function () {
             	console.debug('beforeunload', _this.type + 'hangup')
@@ -238,7 +236,7 @@ function (require, $, Backbone, _, App) {
 */
             function enterFullScreen() {
                 container.webkitRequestFullScreen();
-            };
+            }
 
             this.toggleVideoMute = function() {
                 var videoTracks = this.localStream.getVideoTracks();
@@ -405,26 +403,6 @@ function (require, $, Backbone, _, App) {
                 BusyOverLay.close();
             }
         },
-        byte2Str: function (val) {
-            var possibleTypes = ['bytes', 'KB', 'MB', 'GB'],
-        		canContinue = false,
-        		count = 0;
-
-            var size = parseInt(val, 10) ? Math.floor(parseInt(val, 10)) : '';
-            if (size == '') return '0 bytes';
-
-            do {
-
-                if (size > 1000) {
-                    size = Math.floor((size / 1024) * 100) / 100;
-                    count++;
-                    canContinue = true;
-                } else {
-                    canContinue = false;
-                }
-            } while (canContinue);
-            return size + ' ' + possibleTypes[count];
-        },
         string: {
             contains: function (str, needle) {
                 if (needle === '') return true;
@@ -473,13 +451,12 @@ function (require, $, Backbone, _, App) {
 
         render: function () {
             var self = this;
-            this.bodyoverflow = $('body').css('overflow-y');
+//            this.bodyoverflow = $('body').css('overflow-y');
             $('body').css({ 'overflow-y': 'hidden' });
             this.$el.hide();
             $('body').append(this.el);
             var inside_view = self.view.render();
             this.$el.html(inside_view.$el);
-//debugger
             setTimeout($.proxy(function () {
                 // position dialog
                 //$(self.el).outerWidth()
