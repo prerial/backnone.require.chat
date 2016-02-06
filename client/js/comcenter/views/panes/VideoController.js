@@ -264,7 +264,7 @@ define([
             App.chat.models.UserContact.attributes['presence'] = type;
             App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }))
             App.chat.UserContact.model.attributes['presence'] = type;
-            $(App.chat.UserContact.el).find('.presence').removeClass('offline').removeClass('online').remserveroveClass('busy').removeClass('away').addClass(type);
+            $(App.chat.UserContact.el).find('.presence').removeClass('offline').removeClass('online').removeClass('busy').removeClass('away').addClass(type);
         },
 
         toggleVideo: function () {
