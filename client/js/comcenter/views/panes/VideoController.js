@@ -35,14 +35,14 @@ define([
                 onmessage: this.workflow,
                 scope: this
             });
-/*
-            App.video.videoSocket = new WebSocket({
-                channel: 'prerial-video',
-                userid: App.chat.models.UserContact.get('chid'),
-                onmessage: this.workflow,
-                scope: this
-            });
-*/
+            /*
+             App.video.videoSocket = new WebSocket({
+             channel: 'prerial-video',
+             userid: App.chat.models.UserContact.get('chid'),
+             onmessage: this.workflow,
+             scope: this
+             });
+             */
             App.eventManager.on('startVideoCall', this.openSession, this);
             App.eventManager.on('setPresence', this.setPresence, this);
             App.eventManager.on('joinSession', this.joinSession);
@@ -90,8 +90,11 @@ define([
                         }
                         break;
                     case 'videocandidate':
-                        var candidate = new RTCIceCandidate({ sdpMLineIndex: response.label, candidate: response.candidate });
-                        App.video.videoRoom.peers[App.video.videoRoom.user].addIceCandidate(candidate);
+                        try{
+                            var candidate = new RTCIceCandidate({ sdpMLineIndex: response.label, candidate: response.candidate });
+                            App.video.videoRoom.peers[App.video.videoRoom.user].addIceCandidate(candidate);
+                        }catch(ex){
+                        }
                         break;
                     case 'videohangup':
                         if (response.mode === 'window') {
@@ -154,21 +157,21 @@ define([
                         };
                         if (InviewApp.Config.User.chid !== response.user && InviewApp.Config.User.chid === response.contact) {
                             var cView = new Dialog({ scope: this, mode: 'confirm', text: 'Do you want to join Video Call?', callback: function (par) {
-                                    this.scope.closeDialog();
-                                    App.video.videoRoom.sessionid = response.sessionid;
-                                    App.video.videoSocket.send({
-                                        type: 'videopermission',
-                                        sessionid: response.sessionid,
-                                        contact: response.contact,
-                                        user: response.user,
-                                        permission: par
-                                    });
-                                    $("#btn-video-add").addClass('disabled');
-                                    var user = App.chat.ContactListCollection.where({chid: response.user});
-                                    App.chat.ContactList[user[0].attributes.chid].el[0].click();
-                                    App.eventManager.trigger("showChat");
-                                    snd.pause();
-                                }
+                                this.scope.closeDialog();
+                                App.video.videoRoom.sessionid = response.sessionid;
+                                App.video.videoSocket.send({
+                                    type: 'videopermission',
+                                    sessionid: response.sessionid,
+                                    contact: response.contact,
+                                    user: response.user,
+                                    permission: par
+                                });
+                                $("#btn-video-add").addClass('disabled');
+                                var user = App.chat.ContactListCollection.where({chid: response.user});
+                                App.chat.ContactList[user[0].attributes.chid].el[0].click();
+                                App.eventManager.trigger("showChat");
+                                snd.pause();
+                            }
                             });
                             dialog = InviewApp.Config.Dialogs.Invite = Utils.createDialog({ view: cView });
                             dialog.open();
@@ -261,7 +264,7 @@ define([
             App.chat.models.UserContact.attributes['presence'] = type;
             App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }))
             App.chat.UserContact.model.attributes['presence'] = type;
-            $(App.chat.UserContact.el).find('.presence').removeClass('offline').removeClass('online').removeClass('busy').removeClass('away').addClass(type);
+            $(App.chat.UserContact.el).find('.presence').removeClass('offline').removeClass('online').remserveroveClass('busy').removeClass('away').addClass(type);
         },
 
         toggleVideo: function () {
@@ -280,4 +283,3 @@ define([
         }
     });
 });
-
