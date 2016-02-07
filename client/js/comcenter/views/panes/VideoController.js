@@ -75,7 +75,7 @@ define([
                         break;
                     case 'videooffer':
                         if (!App.video.moderator) {
-//                            console.debug('Received Offer: ', response.sdp);
+                            console.debug('Received Offer: ', response.sdp);
                             response.type = 'offer';
                             var sessionDescription = new RTCSessionDescription(response);
                             App.video.videoRoom.peers[App.video.videoRoom.user].setRemoteDescription(sessionDescription);
@@ -84,15 +84,16 @@ define([
                         break;
                     case 'videoanswer':
                         if (App.video.moderator) {
-//                            console.debug('Received Answer: ', response.sdp);
+                            console.debug('Received Answer: ', response.sdp);
                             response.type = 'answer';
                             App.video.videoRoom.peers[App.video.videoRoom.user].setRemoteDescription(new RTCSessionDescription(response));
                         }
                         break;
                     case 'videocandidate':
-                        if(arg.user !== _this.userid){
+                        try{
                             var candidate = new RTCIceCandidate({ sdpMLineIndex: response.label, candidate: response.candidate });
                             App.video.videoRoom.peers[App.video.videoRoom.user].addIceCandidate(candidate);
+                        }catch(ex){
                         }
                         break;
                     case 'videohangup':
@@ -190,6 +191,7 @@ define([
                 App.video.started = false;
                 App.video.videoRoom.miniMediaContainer = $('#mini-media-stream');
                 App.video.videoRoom.localMediaContainer = $('#local-media-stream');
+                App.video.videoRoom.remoteMediaContainer = $('#remote-media-streams');
                 var contact = App.chat.conversations.active;
                 var presence = contact !== null ? App.chat.ContactList[contact].presence : '';
                 App.video.videoRoom.targetUser = contact;

@@ -84,15 +84,15 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
             case 'login':
                 var dialog = null;
                 var cView = new Dialog({ scope: this, mode: 'login', text: 'Do you want to join Video Call?', callback: function (par) {
-                    this.scope.closeDialog();
-                }
+                        this.scope.closeDialog();
+                    }
                 });
                 dialog = Utils.createDialog({ view: cView });
                 dialog.open();
                 console.debug("Dialog Login Opened")
 //               App.login = new Login();
 //                App.root.append(App.login.render().el);
-                break;
+               break;
             case 'authenticated':
                 /////////////////////// Test for Chat /////////////////////////////////////
                 InviewApp.Config.User = InviewApp.Config.TestChatList[arg.user];
@@ -131,15 +131,15 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                     userid: App.chat.models.UserContact.get('chid'),
                     useStatus: true
                 });
-                /*
-                 App.chat.conversations.webSocket = new Websocket({
-                 url: 'https://chat.firebaseIO.com/prerial/',
-                 userid: App.chat.models.UserContact.get('chid'),
-                 useStatus: true
-                 });
-                 App.chat.conversations.webSocket.initialize();
-                 */
-                $('.topmenu_chat').css('display', 'block');
+/*
+                App.chat.conversations.webSocket = new Websocket({
+                    url: 'https://chat.firebaseIO.com/prerial/',
+                    userid: App.chat.models.UserContact.get('chid'),
+                    useStatus: true
+                });
+                App.chat.conversations.webSocket.initialize();
+ */
+               $('.topmenu_chat').css('display', 'block');
                 if (!_this.chatPopup) {
                     _this.chatPopup = new ComCenter({
                         el: 'div#comcenter'

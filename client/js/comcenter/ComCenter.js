@@ -22,7 +22,7 @@ define([
     'text!comcenter/templates/comcenter.html'
 ], function (require, $, Backbone, _, /*Slide, */Utils, App, Websocket, Dialog, Contact, Toolbar, ContactList, ContacGrouptList, ContactDisplay, ChatGroup, ChatPhone, ChatVideo, ContactInfo, ContactAdd, ChatSettings, PopUpTemplate) {
 
-    var _this = this;
+            var _this = this;
     return Backbone.View.extend({
 
         events: function () {
@@ -76,41 +76,41 @@ define([
             });
             $(window).on('resize', this.resize);
             $(window).on('beforeunload', function () {
-                console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
+            	console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                 App.chat.models.UserContact.set('presence', 'offline');
             });
 
         },
         resize: function () {
 //			this.hideAll();
-            var height = $(window).height() - (HEADER_HEIGHT + FOOTER_HEIGHT);
-            $('.comcenter').height(height);
-            $('.chat-pane-left').height(height-66);
+			var height = $(window).height() - (HEADER_HEIGHT + FOOTER_HEIGHT);
+			$('.comcenter').height(height);
+			$('.chat-pane-left').height(height-66);
             $('.contactGroupList').height(height - 100);
             $('#chatContacts, #chatGroupContacts').height(height - 220);
-            $('#chatDisplaySlider').height(height-50);
-            $('#chat-container, #video-container, #phone-container').height(height-136);
-            $('#chat_display_holder,#chat_display_holder1').height(height-210);
+			$('#chatDisplaySlider').height(height-50);
+			$('#chat-container, #video-container, #phone-container').height(height-136);
+			$('#chat_display_holder,#chat_display_holder1').height(height-210);
 
-            /*
-             $('.comcenter, .work-container, .contacts-container').height(height);
-             $('#contact-list-content').height(height - 120);
-             $('.contact-info-container').height(height - 60);
-             $('#video-panel-container').height(height - 60);
+/*
+			$('.comcenter, .work-container, .contacts-container').height(height);
+			$('#contact-list-content').height(height - 120);
+			$('.contact-info-container').height(height - 60);
+			$('#video-panel-container').height(height - 60);
 
-             //               this.hideAll();
-             var height = $('#iv_app').height() - (App.HEADER_HEIGHT + App.BASELINE_HEIGHT);
-             //                $('#contact-list-content').height(height - 120);
-             //                $('#message-list-content').height(height - 170);
-             //                $('#video-panel-container').height(height - 60);
-             $('.chat, .chat-container, #video-container, #chatDisplaySlider').height(height);
-             //               $('.contact, .contactList, #chatContacts, .contactGroupList').height(height-160);
-             $('.contactGroupList').height(height - 160);
-             $('#chatContacts').height(height - 160);
-             $('.contactSearch').height(height - 140);
+            //               this.hideAll();
+            var height = $('#iv_app').height() - (App.HEADER_HEIGHT + App.BASELINE_HEIGHT);
+            //                $('#contact-list-content').height(height - 120);
+            //                $('#message-list-content').height(height - 170);
+            //                $('#video-panel-container').height(height - 60);
+            $('.chat, .chat-container, #video-container, #chatDisplaySlider').height(height);
+            //               $('.contact, .contactList, #chatContacts, .contactGroupList').height(height-160);
+            $('.contactGroupList').height(height - 160);
+            $('#chatContacts').height(height - 160);
+            $('.contactSearch').height(height - 140);
 
-             console.log('Message Center height: ' + height);
-             */
+            console.log('Message Center height: ' + height);
+*/
         },
 
         onToolbarClicked: function (evt) {
@@ -120,7 +120,7 @@ define([
                 this.contactGroupList = new ContacGrouptList;
                 $('.contactGroupList').html(this.contactGroupList.$el);
                 $('.contact').addClass('flip');
-                App.eventManager.trigger('resize');
+	            App.eventManager.trigger('resize');
             } else {
 //                App.dialog.$el.find('ul').html(InviewApp.Config.Dialogs.EditContacts);
                 $('.contact-list-title').html('Contact List');
@@ -132,7 +132,7 @@ define([
             $(this.el).append(this.template(this.id));
             App.chat.UserContact = new Contact({ displayonly: true, user: true, model: App.chat.models.UserContact });
             App.chat.UserContact.render();
-            App.chat.UserContact.$el.width(250)//.css('border','1px solid red');
+			App.chat.UserContact.$el.width(250)//.css('border','1px solid red');
             $('.userContact').append(App.chat.UserContact.$el);
             var toolbar = new Toolbar;
             $('.chatToolbar').append(toolbar.$el);
@@ -151,29 +151,29 @@ define([
             $('#contactInfo').append(contactInfo.$el);
             var contactAdd = new ContactAdd();
             $('#contactAdd').append(contactAdd.$el);
-            /*
-             */
+/*
+*/
             var chatPhone = new ChatPhone();
             $('#phone-container').append(chatPhone.$el);
-            /*
-             App.audio.audioRoom = new Utils.audio('audio', 'local-audio-stream', 'remote-audio-streams');
-             */
+/*
+			App.audio.audioRoom = new Utils.audio('audio', 'local-audio-stream', 'remote-audio-streams');
+*/
             App.audio.audioRoom = new Utils.mediaRoom({
-                'type': 'audio',
-                'localcontainer':  'local-audio-stream',
-                'remotecontainer': 'remote-audio-streams',
-                'minicontainer':   null
+            	'type': 'audio',
+            	'localcontainer':  'local-audio-stream',
+            	'remotecontainer': 'remote-audio-streams',
+            	'minicontainer':   null
             });
             App.audio.audioRoom.initialize();
-            App.audio.audioRoom.gotLocalStream = chatPhone.gotLocalStream;
+			App.audio.audioRoom.gotLocalStream = chatPhone.gotLocalStream;
 
             var chatVideo = new ChatVideo();
             $('#video-container').append(chatVideo.$el);
             App.video.videoRoom = new Utils.mediaRoom({
-                'type': 'video',
-                'localcontainer':  'local-media-stream',
-                'remotecontainer': 'remote-media-streams',
-                'minicontainer':   'mini-media-stream'
+            	'type': 'video',
+            	'localcontainer':  'local-media-stream',
+            	'remotecontainer': 'remote-media-streams',
+            	'minicontainer':   'mini-media-stream'
             });
             App.video.videoRoom.initialize();
             App.video.videoRoom.gotLocalStream = chatVideo.gotLocalStream;
@@ -194,8 +194,8 @@ define([
             $('.chat').width(750);
             $('.infoContact').hide();
             $('.deleteContact').hide();
-            //           this.contactList.showedit = false;
-            //           this.contactList.showinfo = false;
+ //           this.contactList.showedit = false;
+ //           this.contactList.showinfo = false;
         },
 
         closeAllPopUps: function (evt) {
@@ -245,8 +245,8 @@ define([
                 $('.icon-settings').removeClass('selected');
                 App.chat.displaySlider.slide(0);
             } else {
-                $('#chat-settings').width(400);
-                $('#chatSettings').width(400);
+                	$('#chat-settings').width(400);
+                	$('#chatSettings').width(400);
 
 //                App.chat.displaySlider.slide(4);
                 $('.icon-settings').addClass('selected');
@@ -263,7 +263,7 @@ define([
                             var presence = App.chat.models.UserContact.get('presence');
                             App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }))
                             //                            App.chat.models.UserContact.set('presence', 'offline');
-                            console.debug('Update presence: ' + presence + ' Id: ' + App.chat.models.UserContact.attributes.chid);
+            				console.debug('Update presence: ' + presence + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                             App.chat.models.UserContact.set('presence', presence);
                         }
                         break;
@@ -273,7 +273,7 @@ define([
                             App.video.videoRoom.blnJoinedRoom = false;
                             App.video.videoRoom.isInitiator = false;
                             App.eventManager.trigger('joinSession', { user: result.user, contact: result.contact });
-                            //                           App.video.videoRoom.blnJoinedRoom = true;
+ //                           App.video.videoRoom.blnJoinedRoom = true;
                             $('.chat').width(750);
                             $('#video-container').width(404);
                             $('#btn-video-add').hide();
@@ -289,18 +289,18 @@ define([
                                 App.eventManager.trigger('startSession', { user: result.user, contact: result.contact });
                                 App.video.started = true;
                             }
-                            /*
-                             if (!App.video.moderator && App.video.videoRoom.sessionInitialized && App.chat.models.UserContact.get('chid') === result.contact) {
-                             App.video.videoRoom.blnJoinedRoom = false;
-                             App.video.videoRoom.isInitiator = false;
-                             App.eventManager.trigger('joinSession', { user: result.user, contact: result.contact });
-                             $('.chat').width(750);
-                             $('#video-container').width(404);
-                             $('#btn-video-add').hide();
-                             $('.contactList1').css('opacity', '1');
-                             $('.contactList2').css('opacity', '0');
-                             }
-                             */
+/*
+                            if (!App.video.moderator && App.video.videoRoom.sessionInitialized && App.chat.models.UserContact.get('chid') === result.contact) {
+                                App.video.videoRoom.blnJoinedRoom = false;
+                                App.video.videoRoom.isInitiator = false;
+                                App.eventManager.trigger('joinSession', { user: result.user, contact: result.contact });
+                                $('.chat').width(750);
+                                $('#video-container').width(404);
+                                $('#btn-video-add').hide();
+                                $('.contactList1').css('opacity', '1');
+                                $('.contactList2').css('opacity', '0');
+                            }
+*/
                         } else {
                             if (App.video.moderator) {
                                 var cView = new Dialog({ mode: 'alert', text: 'Invitatiobn to join Video Call was declined!' });
@@ -335,15 +335,15 @@ define([
                         try {
                             if (App.chat.ContactList[result.chid]) {
                                 //                                App.chat.ContactList.presence = result.data.presence;
-                                console.debug('Update presence: ' + result.data.presence + ' Id: ' + result.chid);
+	            		console.debug('Update presence: ' + result.data.presence + ' Id: ' + result.chid);
                                 App.chat.ContactList[result.chid].model.attributes['presence'] = result.data.presence;
                                 App.chat.ContactList[result.chid].el.find('.presence').removeClass('offline').removeClass('online').removeClass('busy').removeClass('away').addClass(result.data.presence);
                             }
                         } catch (ex) {
                         }
-                        if(result.chid === App.chat.models.ContactDisplay.model.get('chid')){
-                            App.chat.models.ContactDisplay.model.set('presence', result.data.presence);
-                        }
+						if(result.chid === App.chat.models.ContactDisplay.model.get('chid')){
+							App.chat.models.ContactDisplay.model.set('presence', result.data.presence);
+						}
                         break;
                     case 'updateContact':
                         try {
@@ -367,7 +367,7 @@ define([
                         break;
                     case 'conversation':
                         if (InviewApp.Config.User.chid === result.chidTo) {
-                            var pre = $('<div class="bubble bubble--alt"></div>');
+                			var pre = $('<div class="bubble bubble--alt"></div>');
 //                            pre.css('word-wrap', 'break-word');
 //                            pre.css('color', '#109E9C');
                             pre.html(App.chat.ContactList[result.chidFrom].title + ': ' + result.message);
@@ -381,7 +381,7 @@ define([
 
         startConversation: function (evt) {
             var arg = arguments[0];
-            //           App.chat.slider.slide(arg.collection.indexOf(arg));
+ //           App.chat.slider.slide(arg.collection.indexOf(arg));
             App.chat.conversations.active = arg.attributes.chid;
             App.chat.conversations.activeContact = arg.attributes;
             App.chat.conversations.webSocket.doSend(JSON.stringify({ type: 'start', 'chid': arg.attributes.chid, message: 'Message from ' + InviewApp.Config.User.title }))
@@ -392,11 +392,11 @@ define([
             this.hidden = true;
             App.chat.visible = true;
             if(!$('.modeItem').hasClass('selected')){
-                $('.chatToolbar').find('li')[0].click();
+					$('.chatToolbar').find('li')[0].click();
             }
-            setTimeout(function(){
-                $('.comcenter').width(750);
-            },400);
+				setTimeout(function(){
+            $('.comcenter').width(750);
+				},400);
 //           $(this.el).append("<div class='chatCover'></div>");
         },
 

@@ -17,7 +17,7 @@ require.config({
         },
     },
     paths: {
-        socketio: '/libs/socket.io/socket.io-1.0.6',
+        socketio: '../libs/socket.io/socket.io-1.0.6',
         jquery: '../libs/jquery/jquery',
         underscore: '../libs/underscore/underscore',
         backbone: '../libs/backbone/backbone',
