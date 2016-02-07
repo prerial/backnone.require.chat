@@ -234,3 +234,19 @@ body
 	box-pack:center;
 	box-align:center;
 }
+#placeHead_Topbar .tools {
+	position:absolute;
+	left: 0px;
+	top:0px;
+	width: 54px;
+	height:54px;
+}
+#placeHead_Topbar .tools li {
+	width: 54px;
+	height: 54px;
+	cursor:pointer;
+	border:0px solid red;
+}
+#placeHead_Topbar .topmenu_chat {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -227px;
+}

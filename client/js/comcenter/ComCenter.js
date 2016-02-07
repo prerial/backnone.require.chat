@@ -79,7 +79,7 @@ define([
             	console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                 App.chat.models.UserContact.set('presence', 'offline');
             });
-
+            $('.topmenu_chat')[0].click();
         },
         resize: function () {
 //			this.hideAll();
@@ -177,10 +177,6 @@ define([
             });
             App.video.videoRoom.initialize();
             App.video.videoRoom.gotLocalStream = chatVideo.gotLocalStream;
-
-
-
-
             $('.comcenter').width(0);
             toolbar.hideAll();
             this.resize();
@@ -229,7 +225,6 @@ define([
             if (this.chatsettings !== null) {
                 $('.chat-settings').hide();
                 $('#chatSettings').hide();
-
                 this.chatsettings_visible = false;
             }
         },
