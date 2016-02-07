@@ -81,10 +81,10 @@
 }
 .contactList1, .contactList2
 {
-	position: absolute;
+    position: absolute;
     opacity:1;
-	top: 0;
-	left: 4px;
+    top: 0;
+    left: 4px;
     -ms-transition: opacity 2s, width 1s, height 1s, top 1s, -webkit-transform 1s;
     transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
     -webkit-transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
@@ -92,11 +92,11 @@
 /*********************** start Toolbar ****************************/
 
 #chat_toolbar{
-	opacity:0;
-	-ms-transition: opacity 1s, -ms-transform 1s;
-	-webkit-transition: opacity 1s, -webkit-transform 1s;
-	-moz-transition: opacity 1s, -moz-transform 1s;
-	transition: opacity 1s, -transform 1s;
+    opacity:0;
+    -ms-transition: opacity 1s, -ms-transform 1s;
+    -webkit-transition: opacity 1s, -webkit-transform 1s;
+    -moz-transition: opacity 1s, -moz-transform 1s;
+    transition: opacity 1s, -transform 1s;
 }
 .comcenter .sectionTitle {
     width:300px;
@@ -191,8 +191,8 @@
     width: 40px;
     height: 40px;
     border: 1px solid red;
-/*    border: 1px solid green;
-    margin-right:20px; */
+    /*    border: 1px solid green;
+        margin-right:20px; */
     background:url(../imgs/chat/settings11.png) transparent 0  0 no-repeat;
 }
 #video-container, #chat-container, #group-container, #phone-container, #chat-settings, #chatSettings
@@ -211,7 +211,7 @@
     width:109px;
     height:109px;
     border: 0px solid red;
-	background: url(../imgs/img_audio_only.png) no-repeat;
+    background: url(../imgs/img_audio_only.png) no-repeat;
 }
 .media-streams-container
 {
@@ -232,10 +232,10 @@
 }
 video
 {
-	width:385px !important;
-	height:290px;
-	margin:0;
-	padding:0;
+    width:385px !important;
+    height:290px;
+    margin:0;
+    padding:0;
 }
 #local-media-stream{
     position:absolute;
@@ -245,13 +245,13 @@ video
     -ms-transition: opacity 3s, -webkit-transform 3s;
     transition: opacity 3s, -webkit-transform 3s;
     -webkit-transition: opacity 3s, -webkit-transform 3s;
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
-	-moz-transition: all .6s ease-in-out;
-	-webkit-transition: all .6s ease-in-out;
-	transition: all .6s ease-in-out;
-	width:385px !important;
-	height:290px;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+    width:385px !important;
+    height:290px;
     z-index:200;
     background: #212121;
     background: #212121 url(../imgs/img_video_bg.png) 100% 100% no-repeat;
@@ -264,33 +264,13 @@ video
     -ms-transition: opacity 3s, -webkit-transform 3s;
     transition: opacity 3s, -webkit-transform 3s;
     -webkit-transition: opacity 3s, -webkit-transform 3s;
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
-	-moz-transition: all .6s ease-in-out;
-	-webkit-transition: all .6s ease-in-out;
-	transition: all .6s ease-in-out;
-	width:385px !important;
-	height:290px;
-    z-index:100;
-}
-.remote-media-streams video
-{
-    position:absolute;
-    padding:0;
-    margin:0;
-    top:0;
-	width:385px !important;
-	height:290px;
-    z-index:100;
-}
-#remote-media-streams video
-{
-    position:absolute;
-    padding:0;
-    margin:0;
-    top:0;
-	width:385px !important;
-	height:290px;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+    width:385px !important;
+    height:290px;
     z-index:100;
 }
 #mini-media-stream
@@ -306,7 +286,7 @@ video
     -webkit-transition: width 1s;
     -o-transition: width 1s;
     -moz-transition: width 1s;
-	transition: width 1s;
+    transition: width 1s;
     z-index:200;
 }
 #mini-media-stream video
@@ -456,76 +436,76 @@ input.sendField
 }
 .panel.flip .front
 {
-	z-index: 1900;
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
+    z-index: 1900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 }
 .panel .front
 {
-	float: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1900;
-	width: inherit;
-	height: inherit;
-	background: #fff;
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1900;
+    width: inherit;
+    height: inherit;
+    background: #fff;
 
-	-webkit-transform: rotateX(0deg) rotateY(0deg);
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
 
-	-moz-transform: rotateX(0deg) rotateY(0deg);
-	-moz-transform-style: preserve-3d;
-	-moz-backface-visibility: hidden;
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
 
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
-	-moz-transition:  all .6s ease-in-out;
-	-webkit-transition: all .6s ease-in-out;
-	transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+    -moz-transition:  all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
 }
 .panel .back
 {
-	float: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1800;
-	width: inherit;
-	height: inherit;
-	background: #fff;
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1800;
+    width: inherit;
+    height: inherit;
+    background: #fff;
 
-	-webkit-transform: rotateY(180deg);
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
 
-	-moz-transform: rotateY(180deg);
-	-moz-transform-style: preserve-3d;
-	-moz-backface-visibility: hidden;
+    -moz-transform: rotateY(180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
 
-	-ms-transform: rotateY(180deg);
-	-ms-transform-style: preserve-3d;
-	-ms-backface-visibility: hidden;
+    -ms-transform: rotateY(180deg);
+    -ms-transform-style: preserve-3d;
+    -ms-backface-visibility: hidden;
 
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
-	transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
-	-moz-transition: all .6s ease-in-out;
-	-webkit-transition: all .6s ease-in-out;
-	transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
 }
 
 .panel.flip .back
 {
-	z-index: 2000;
-	-webkit-transform: rotateX(0deg) rotateY(0deg);
-	-moz-transform: rotateX(0deg) rotateY(0deg);
-	-ms-transform: rotateX(0deg) rotateY(0deg);
-	transform: rotateX(0deg) rotateY(0deg);
+    z-index: 2000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
 }
 #chat_display_holder, #chat_group_holder1
 {

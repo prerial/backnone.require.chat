@@ -17,7 +17,7 @@
                 var args = arguments[0];
                 this.type = args.type;
                 this.localContainer = $('#' + args.localcontainer);
-                this.remoteContainer = $('#' + args.remotecontainer);
+//                this.remoteContainer = $('#' + args.remotecontainer);
                 this.miniContainer = $('#' + args.minicontainer);
 
                 this.initialize = function () {
@@ -82,9 +82,10 @@
                 }
 
                 function sendMessage(message) {
+                    message.user = _this.user;
                     var msgString = JSON.stringify(message);
-                    console.log('C->S: ', message.sdp? message.sdp: message);
-                    console.log('=======================================');
+//                    console.log('C->S: ', message.sdp? message.sdp: message);
+//                    console.log('=======================================');
                     App[_this.type][_this.type + 'Socket'].send(message);
                 }
 
@@ -93,6 +94,7 @@
                         sendMessage({
                             type: _this.type + 'candidate',
                             label: event.candidate.sdpMLineIndex,
+                            user: _this.user,
                             id: event.candidate.sdpMid,
                             candidate: event.candidate.candidate
                         });
@@ -141,19 +143,22 @@
                 function onRemoteStreamAdded(event) {
                     console.log('Remote stream added.');
                     if(_this.type === 'video'){
-                        _this.reattachMediaStream(miniVideo, localVideo);
+//                        _this.reattachMediaStream(miniVideo, localVideo);
                         miniVideo.src = localVideo.src;
+                        localVideo.src = null;
                         var mediaElement = $('<video autoplay="autoplay" style="top:0;position:absolute;border:4px solid #fff;"></video>');
 /////////////////////////////////////////////
-                        attachMediaStream(mediaElement[0], event.stream)
+//                        attachMediaStream(mediaElement[0], event.stream)
+                        _this.remoteStream = event.stream;
+                        localVideo.src = URL.createObjectURL(event.stream);
 //					mediaElement[0].src = URL.createObjectURL(event.stream);
 //////////////////////////////////////////////////////////////////////
-                        mediaElement[0].id = 'video_' + _this.targetUser;
+//                        mediaElement[0].id = 'video_' + _this.targetUser;
                         try{
-                            _this.remoteContainer.append(mediaElement);
+//                            _this.remoteContainer.append(mediaElement);
                         } catch (ex) {
                         }
-                        _this.remoteStream = event.stream;
+//                        _this.remoteStream = event.stream;
                     }else{
                         $('#remotePhone')[0].src = URL.createObjectURL(event.stream);
                         _this.remoteStream = event.stream;
@@ -175,7 +180,7 @@
 //                    sendMessage({ type: 'hangup', mode: 'local' });
 //                }
                         _this.localContainer.css('opacity', 0);
-                        _this.remoteContainer.css('opacity', 0);
+//                        _this.remoteContainer.css('opacity', 0);
                         setTimeout(function () {
                             stop();
                             console.debug('Clicked hangup.');
@@ -216,7 +221,7 @@
                         }
                         $('#localVideo')[0].src = "";
                         $('#miniVideo')[0].src = "";
-                        _this.remoteContainer.find('video').remove();
+//                        _this.remoteContainer.find('video').remove();
                         _this.localContainer.css('opacity', 1);
                         if(_this.miniContainer !== null) _this.miniContainer.css('opacity', 1);
                         App.eventManager.trigger('setPresence', 'online');
@@ -243,7 +248,7 @@
                 }
 
                 function transitionToActive() {
-                    _this.remoteContainer.css('display', 'block').css('opacity', 1);
+//                    _this.remoteContainer.css('display', 'block').css('opacity', 1);
                     if(_this.miniContainer !== null) {
                         _this.miniContainer.css('opacity', 1).css('width', '110px')
                     }
@@ -251,7 +256,7 @@
 
                 function transitionToWaiting() {
                     if(_this.miniContainer !== null) _this.miniContainer.css('width', '0px');
-                    _this.remoteContainer.css('display', 'none').css('opacity', 0);
+//                    _this.remoteContainer.css('display', 'none').css('opacity', 0);
                     if (App.video.moderator) {
                         console.debug('transitionToWaiting' + App.video.moderator);
                         _this.localContainer.css('opacity', 1);
