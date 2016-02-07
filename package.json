@@ -1,7 +1,13 @@
 {
   "name"         : "node-backbone-socket.io",
   "version"      : "0.0.0",
-  "description"  : "Communication Center application.",
+  "description"  : "Communication Center",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prerial/backnone.require.chat.git"
+  },
+  "description": "Project to demostrate websocket chat, WebRTC audio and video",
+  "version": "0.0.1",
   "main"         : "server.js",
   "license"       : "MIT",
   "author"       : "MG",
