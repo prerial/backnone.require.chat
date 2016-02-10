@@ -19,7 +19,6 @@
             this.profile.phones.on('change', this.onPhonesChange, this);
             this.profile.on('change', this.onProfileChange, this);
             this.on('change', this.notify, this);
-            instance = this;
         },
         set: function (attributes, options) {
             Backbone.Model.prototype.set.apply(this, arguments);

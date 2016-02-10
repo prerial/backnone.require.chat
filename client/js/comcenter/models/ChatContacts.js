@@ -1,8 +1,7 @@
 ﻿define([
     'jquery',
-    'backbone',
-    'underscore'
-], function ($, Backbone, _) {
+    'backbone'
+], function ($, Backbone) {
 
     return Backbone.Model.extend({
 //        url: 'data/chatContactList.js',

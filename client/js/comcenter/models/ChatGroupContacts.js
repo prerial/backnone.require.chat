@@ -2,7 +2,7 @@
     'jquery',
     'backbone',
     'underscore'
-], function ($, Backbone, _) {
+], function ($, Backbone) {
 
     return Backbone.Model.extend({
 //        url: 'data/chatContactList.js',

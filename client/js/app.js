@@ -9,22 +9,17 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
     var initialize = function () {
         if (blnTest) {
             Appl = App;
-//            debugger
         }
         App.authenticated = false;
         App.eventManager = _.extend({}, Backbone.Events);
         App.eventManager.on("authenticated", appWorkflow);
         App.eventManager.on("un-authenticated", appWorkflow);
         App.eventManager.on("serverMessage", checkAvalable);
-//        App.dialog = new Dialog();
-//        $('body').append(App.dialog.$el);
-//        App.dialog.$el.hide();
         $('.topmenu_chat')[0].addEventListener('click', function () {
             openComCenter();
         }, false);
         /*********************** end Communication Center *********************/
         $(window).on('resize', function () {
-//            console.log("resize Com Center");
             App.eventManager.trigger('app:resize');
         });
         App.root = $('body');

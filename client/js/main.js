@@ -14,7 +14,7 @@ require.config({
         'jqmobile': {
             deps: ['jquery'],
             exports: 'jQuery.fn.jqmobile'
-        },
+        }
     },
     paths: {
         socketio: '../libs/socket.io/socket.io-1.0.6',
