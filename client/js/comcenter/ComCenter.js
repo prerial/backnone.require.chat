@@ -20,17 +20,12 @@ define([
     'comcenter/views/contact/ContactAdd',
     'comcenter/views/settings/Settings',
     'text!comcenter/templates/comcenter.html'
-], function (require, $, Backbone, _, /*Slide, */Utils, App, Websocket, Dialog, Contact, Toolbar, ContactList, ContacGrouptList, ContactDisplay, ChatGroup, ChatPhone, ChatVideo, ContactInfo, ContactAdd, ChatSettings, PopUpTemplate) {
+], function (require, $, Backbone, _, /*Slide, */Utils, App, Websocket, Dialog, Contact, Toolbar, ContactList, ContacGrouptList, ContactDisplay, ChatGroup, ChatPhone, ChatVideo, ContactInfo, ContactAdd, ChatSettings) {
 
-            var _this = this;
-    return Backbone.View.extend({
+     return Backbone.View.extend({
 
         events: function () {
-            return App.isiPad ? {
-                "touchstart .contListButton": "showContactsEdit",
-                "touchstart .chatCover": "hideChat",
-                "touchstart .icon-settings": "showSettings"
-            } : {
+            return {
                 "click #btn-audio-add": "startPhoneCall",
                 "click #btn-video-add": "startVideoCall",
                 "click .contListButton": "showContactsEdit",
@@ -79,7 +74,7 @@ define([
             	console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                 App.chat.models.UserContact.set('presence', 'offline');
             });
-
+            $('.topmenu_chat')[0].click();
         },
         resize: function () {
 //			this.hideAll();
@@ -132,7 +127,7 @@ define([
             $(this.el).append(this.template(this.id));
             App.chat.UserContact = new Contact({ displayonly: true, user: true, model: App.chat.models.UserContact });
             App.chat.UserContact.render();
-			App.chat.UserContact.$el.width(250)//.css('border','1px solid red');
+			App.chat.UserContact.$el.width(250);//.css('border','1px solid red');
             $('.userContact').append(App.chat.UserContact.$el);
             var toolbar = new Toolbar;
             $('.chatToolbar').append(toolbar.$el);
@@ -177,10 +172,6 @@ define([
             });
             App.video.videoRoom.initialize();
             App.video.videoRoom.gotLocalStream = chatVideo.gotLocalStream;
-
-
-
-
             $('.comcenter').width(0);
             toolbar.hideAll();
             this.resize();
@@ -190,7 +181,7 @@ define([
             return this;
         },
 
-        onToolbarClick: function (evt) {
+        onToolbarClick: function () {
             $('.chat').width(750);
             $('.infoContact').hide();
             $('.deleteContact').hide();
@@ -198,7 +189,7 @@ define([
  //           this.contactList.showinfo = false;
         },
 
-        closeAllPopUps: function (evt) {
+        closeAllPopUps: function () {
             if (App.dialog && App.dialog.$el) {
                 App.dialog.$el.hide();
             }
@@ -210,7 +201,7 @@ define([
         },
 
         doSendOnClick: function () {
-            if ($('#sendMessage').val() !== '' && App.chat.conversations.active) {
+            if ( $('#sendMessage').val() !== '' && App.chat.conversations.active) {
                 var message = $('#sendMessage').val();
                 var pre = $('<div class="bubble"></div>');
 //                pre.css('word-wrap', 'break-word');
@@ -220,8 +211,7 @@ define([
                 App.chat.conversations.webSocket.doSend(JSON.stringify({ type: 'conversation', 'chidTo': App.chat.conversations.active, 'chidFrom': InviewApp.Config.User.chid, 'message': message }))
             }
             window.setTimeout(function () {
-                $('#sendMessage').val('');
-                $('#sendMessage').blur();
+                $('#sendMessage').val('').blur();
             }, 100);
         },
 
@@ -229,7 +219,6 @@ define([
             if (this.chatsettings !== null) {
                 $('.chat-settings').hide();
                 $('#chatSettings').hide();
-
                 this.chatsettings_visible = false;
             }
         },
@@ -245,23 +234,22 @@ define([
                 $('.icon-settings').removeClass('selected');
                 App.chat.displaySlider.slide(0);
             } else {
-                	$('#chat-settings').width(400);
-                	$('#chatSettings').width(400);
-
+                $('#chat-settings').width(400);
+                $('#chatSettings').width(400);
 //                App.chat.displaySlider.slide(4);
                 $('.icon-settings').addClass('selected');
             }
         },
 
         onServerMessage: function () {
-            var arg = arguments[0];
+            var arg = arguments[0], dialog, cView;
             var result = jQuery.parseJSON(arg.data);
             if (result.type) {
                 switch (result.type) {
                     case 'getRemotePresence':
                         if (InviewApp.Config.User.chid === result.chid) {
                             var presence = App.chat.models.UserContact.get('presence');
-                            App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }))
+                            App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }));
                             //                            App.chat.models.UserContact.set('presence', 'offline');
             				console.debug('Update presence: ' + presence + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                             App.chat.models.UserContact.set('presence', presence);
@@ -303,20 +291,20 @@ define([
 */
                         } else {
                             if (App.video.moderator) {
-                                var cView = new Dialog({ mode: 'alert', text: 'Invitatiobn to join Video Call was declined!' });
-                                var dialog = Utils.createDialog({ view: cView });
+                                cView = new Dialog({ mode: 'alert', text: 'Invitatiobn to join Video Call was declined!' });
+                                dialog = Utils.createDialog({ view: cView });
                                 dialog.open();
                             }
                         }
                         break;
                     case 'videoinvite':
                         var _this = this;
-                        var dialog = null;
+                        dialog = null;
                         this.closeDialog = function () {
                             dialog.close();
                         };
                         if (InviewApp.Config.User.chid !== result.user && InviewApp.Config.User.chid === result.contact) {
-                            var cView = new Dialog({ scope: _this, mode: 'confirm', text: 'Do you want to join Video Call?', callback: function (par) {
+                            cView = new Dialog({ scope: _this, mode: 'confirm', text: 'Do you want to join Video Call?', callback: function (par) {
                                 this.scope.closeDialog();
                                 App.chat.conversations.webSocket.doSend(JSON.stringify({
                                     type: 'permission',
@@ -384,7 +372,7 @@ define([
  //           App.chat.slider.slide(arg.collection.indexOf(arg));
             App.chat.conversations.active = arg.attributes.chid;
             App.chat.conversations.activeContact = arg.attributes;
-            App.chat.conversations.webSocket.doSend(JSON.stringify({ type: 'start', 'chid': arg.attributes.chid, message: 'Message from ' + InviewApp.Config.User.title }))
+            App.chat.conversations.webSocket.doSend(JSON.stringify({ type: 'start', 'chid': arg.attributes.chid, message: 'Message from ' + InviewApp.Config.User.title }));
             App.eventManager.trigger("updateUser", arg.attributes);
         },
 

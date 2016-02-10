@@ -10,15 +10,14 @@
 
 .comcenter-icons
 {
-    background: url("../imgs/sprite-icons-buttons.png");
-    background-position: 0 0;
+    background: url("../imgs/sprite-icons-buttons.png") 0 0;
     height: 26px;
     width: 26px;
     display: inline-block;
     margin-left:6px;
-    -moz-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #ccc !important;/* horz, ver, blur */
-    -webkit-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #ccc !important;
-    box-shadow: 0px 1px 1px #fff inset, 0 1px 0 #ccc !important;
+    -moz-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #ccc !important;/* horz, ver, blur */
+    -webkit-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #ccc !important;
+    box-shadow: 0 1px 1px #fff inset, 0 1px 0 #ccc !important;
 }
 .icon-phone { background-position: 0  -5px !important;}
 .icon-video { background-position: 0  -34px !important;}
@@ -34,7 +33,6 @@ div.ccbutton
     font-size: 13px;
     position: relative;
     background: #eee;
-    margin: 0;
     height: 28px;
     width: 45px;
     margin:6px 0 0 16px;
@@ -42,9 +40,9 @@ div.ccbutton
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    -moz-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    -webkit-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    box-shadow: 0px 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
+    -moz-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    -webkit-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    box-shadow: 0 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
     cursor:default;
 }
 div.icons
@@ -56,17 +54,17 @@ div.ccbutton:hover
     border-top:1px solid #A6D0E5;
     border-bottom:1px solid #5B8BA8;
 	background: -webkit-gradient(linear, left top, left bottom, from(#1D8ECA), to(#1775A6));
-    -moz-box-shadow: 0px 0px 0px #3682cf, 0 0px 0 #003871 !important;/* horz, ver, blur */
-    -webkit-box-shadow: 0 0 5px 5px #1D8ECA blur, 0 0 5px 5px #1775A6 blur !important;
-    box-shadow: 0px 0px 0px #3682cf, 0 0px 0 #003871 !important;
+    -moz-box-shadow: 0 0 0 #3682cf, 0 0 0 #003871 !important;/* horz, ver, blur */
+    -webkit-box-shadow: 0 0 5px 5px #1D8ECA, 0 0 5px 5px #1775A6 !important;
+    box-shadow: 0 0 0 #3682cf, 0 0 0 #003871 !important;
 }
 div.ccbutton.disabled
 {
     background: #eee;
     border: 1px solid #ccc;
-    -moz-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    -webkit-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    box-shadow: 0px 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
+    -moz-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    -webkit-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    box-shadow: 0 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
 }
 div.ccbutton p
 {
@@ -77,7 +75,7 @@ div.ccbutton p
     font-weight:500;
     color: #343434;
 	text-shadow: 1px 2px #fff;
-	border:0px solid red;
+	border:0 solid red;
 	white-space:nowrap;
     z-index: 2;
 }
@@ -94,7 +92,7 @@ div.ccbutton.disabled p
 div.ccbutton p.red
 {
     color:#F90407;
-	text-shadow: 0px 0px #F90407;
+	text-shadow: 0 0 #F90407;
 }
 div.ccbutton:hover p.red
 {
@@ -121,9 +119,9 @@ div.ccbutton.centered:hover
     border-top:1px solid #A6D0E5;
     border-bottom:1px solid #5B8BA8;
 	background: -webkit-gradient(linear, left top, left bottom, from(#1D8ECA), to(#1775A6));
-    -moz-box-shadow: 0px 0px 0px #3682cf, 0 0px 0 #003871 !important;/* horz, ver, blur */
-    -webkit-box-shadow: 0 0 5px 5px #1D8ECA blur, 0 0 5px 5px #1775A6 blur !important;
-    box-shadow: 0px 0px 0px #3682cf, 0 0px 0 #003871 !important;
+    -moz-box-shadow: 0 0 0 #3682cf, 0 0 0 #003871 !important;/* horz, ver, blur */
+    -webkit-box-shadow: 0 0 5px 5px #1D8ECA, 0 0 5px 5px #1775A6 !important;
+    box-shadow: 0 0 0 #3682cf, 0 0 0 #003871 !important;
 }
 div.ccbutton.centered:hover div
 {
@@ -142,9 +140,9 @@ div.ccbutton.centered.disabled
     color: #999;
     border: 1px solid #ccc;
     background: #eee;
-    -moz-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;/* horz, ver, blur */
-    -webkit-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    box-shadow: 0px 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
+    -moz-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;/* horz, ver, blur */
+    -webkit-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    box-shadow: 0 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
 }
 .ccenter-icons
 {
@@ -168,7 +166,6 @@ div.ccbutton.disabled  div.icon-stop-call
 {
     background-position: -74px 0 !important;
 }
-
 div.ccbutton:hover div.icon-start-call
 {
     background-position: -35px 1px !important;
@@ -177,7 +174,6 @@ div.ccbutton.disabled  div.icon-start-call
 {
     background-position: -74px 0 !important;
 }
-
 div.ccbutton:hover div.icon-add-caller
 {
     background-position: -35px -32px !important;

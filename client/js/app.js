@@ -9,27 +9,19 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
     var initialize = function () {
         if (blnTest) {
             Appl = App;
-//            debugger
         }
         App.authenticated = false;
         App.eventManager = _.extend({}, Backbone.Events);
         App.eventManager.on("authenticated", appWorkflow);
         App.eventManager.on("un-authenticated", appWorkflow);
         App.eventManager.on("serverMessage", checkAvalable);
-//        App.dialog = new Dialog();
-//        $('body').append(App.dialog.$el);
-//        App.dialog.$el.hide();
-        $('.topmenu_chat')[0].addEventListener('click', function (e) {
+        $('.topmenu_chat')[0].addEventListener('click', function () {
             openComCenter();
-        }, false);
-        $('.topmenu_remove')[0].addEventListener('click', function (e) {
-            removeCall();
         }, false);
         /*********************** end Communication Center *********************/
         $(window).on('resize', function () {
-//            console.log("resize Com Center");
             App.eventManager.trigger('app:resize');
-        })
+        });
         App.root = $('body');
         var AppRouter = Backbone.Router.extend({
             routes: {
@@ -42,7 +34,7 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
             App.eventManager.trigger("authenticated", { 'type': 'authenticated', 'place': place });
             App.model.set("auth", true);
         });
-        app_router.on('route:defaultRoute', function (actions) {
+        app_router.on('route:defaultRoute', function () {
             if (App.authenticated === false) {
                 App.eventManager.trigger("un-authenticated", { 'type': 'login' });
             }
@@ -83,13 +75,13 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
         switch (arg.type) {
             case 'login':
                 var dialog = null;
-                var cView = new Dialog({ scope: this, mode: 'login', text: 'Do you want to join Video Call?', callback: function (par) {
+                var cView = new Dialog({ scope: this, mode: 'login', text: 'Do you want to join Video Call?', callback: function () {
                         this.scope.closeDialog();
                     }
                 });
                 dialog = Utils.createDialog({ view: cView });
                 dialog.open();
-                console.debug("Dialog Login Opened")
+                console.debug("Dialog Login Opened");
 //               App.login = new Login();
 //                App.root.append(App.login.render().el);
                break;
@@ -118,7 +110,7 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                 App.chat.conversations.connections = {};
                 //                App.chat.conversations.connections[InviewApp.Config.User.chid] = {};
                 App.chat.models.UserContact = new ContactModel(InviewApp.Config.User);
-                App.chat.models.DefaultContact = new ContactModel(InviewApp.Config.InitContactData)
+                App.chat.models.DefaultContact = new ContactModel(InviewApp.Config.InitContactData);
 
                 App.chat.conversations.webSocket = new NodeWebSocket({
                     websocket: SocketIO,
@@ -127,7 +119,7 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                         App.eventManager.trigger("serverMessage", { data: data });
                     },
 //                    $('#messages').append($('<li>').text(data.type));},
-                    url: 'https://chat.firebaseIO.com/prerial/',
+//                    url: 'https://chat.firebaseIO.com/prerial/',
                     userid: App.chat.models.UserContact.get('chid'),
                     useStatus: true
                 });
@@ -144,7 +136,7 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                     _this.chatPopup = new ComCenter({
                         el: 'div#comcenter'
                     });
-                };
+                }
                 break;
         }
     };

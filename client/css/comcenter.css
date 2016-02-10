@@ -1,4 +1,4 @@
-﻿.comcenterShield { display: block; height: 100%; width: 100%;background:#212121; opacity: 0.4;  position: absolute; top:0px;}
+﻿.comcenterShield { display: block; height: 100%; width: 100%;background:#212121; opacity: 0.4;  position: absolute; top:0;}
 .comcenter
 {
     font-family: 'Interstate-Regular', verdana, arial, helvetica, sans-serif;
@@ -7,15 +7,14 @@
     top: 54px;
     overflow: hidden;
     position:absolute;
-    right: 0px;
-    border:0px solid red !important;
+    right: 0;
+    border:0 solid red !important;
     z-index: 1000;
     background: #fff;
     -webkit-user-select: none;
     -webkit-text-size-adjust:none;
     -moz-transition: width 1s;
     -webkit-transition: width 1s;
-    -ms-transition: width 1s;
     -o-transition: width 1s;
     transition: width 1s;
 }
@@ -33,7 +32,7 @@
     z-index: 1000;
     float:left;
     padding: 8px 0 10px 20px;
-    font: 14px;
+    font-size: 14px;
     color: #212121;
     line-height: 20px;
 }
@@ -63,19 +62,12 @@
     width:400px;
     height:480px;
     background:#ebebeb;
-    border: 2px solid #ebebeb;
     border: 2px solid blue;
     z-index: 900 !important;
 }
 #video-container, #chat-container, #group-container, #phone-container, #chat-settings, #chatSettings
 {
-    -moz-transition: width 1s;
-    -webkit-transition: width 1s;
-    -ms-transition: width 1s;
-    -o-transition: width 1s;
-    transition: width 1s;
     -moz-transition: opacity 2s, width 1s, height 1s, top 1s, -moz-transform 1s;
-    -ms-transition: opacity 2s, width 1s, height 1s, top 1s, -ms-transform 1s;
     -webkit-transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
     transition: opacity 2s,width 1s, height 1s, top 1s, -transform 1s;
 }
@@ -85,7 +77,6 @@
     opacity:1;
 	top: 0;
 	left: 4px;
-    -ms-transition: opacity 2s, width 1s, height 1s, top 1s, -webkit-transform 1s;
     transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
     -webkit-transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
 }
@@ -93,7 +84,6 @@
 
 #chat_toolbar{
 	opacity:0;
-	-ms-transition: opacity 1s, -ms-transform 1s;
 	-webkit-transition: opacity 1s, -webkit-transform 1s;
 	-moz-transition: opacity 1s, -moz-transform 1s;
 	transition: opacity 1s, -transform 1s;
@@ -125,7 +115,7 @@
 }
 .chatToolbar ul
 {
-    margin: 5px 0 0 0px;
+    margin: 5px 0 0 0;
     padding: 0;
 }
 .chatToolbar ul li
@@ -191,18 +181,10 @@
     width: 40px;
     height: 40px;
     border: 1px solid red;
-/*    border: 1px solid green;
-    margin-right:20px; */
     background:url(../imgs/chat/settings11.png) transparent 0  0 no-repeat;
 }
 #video-container, #chat-container, #group-container, #phone-container, #chat-settings, #chatSettings
 {
-    -moz-transition: width 1s;
-    -webkit-transition: width 1s;
-    -ms-transition: width 1s;
-    -o-transition: width 1s;
-    transition: width 1s;
-    -ms-transition: opacity 2s, width 1s, height 1s, top 1s, -webkit-transform 1s;
     transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
     -webkit-transition: opacity 2s,width 1s, height 1s, top 1s, -webkit-transform 1s;
 }
@@ -210,7 +192,7 @@
 {
     width:109px;
     height:109px;
-    border: 0px solid red;
+    border: 0 solid red;
 	background: url(../imgs/img_audio_only.png) no-repeat;
 }
 .media-streams-container
@@ -242,18 +224,12 @@ video
     top:0;
     padding:0;
     margin:0;
-    -ms-transition: opacity 3s, -webkit-transform 3s;
-    transition: opacity 3s, -webkit-transform 3s;
-    -webkit-transition: opacity 3s, -webkit-transform 3s;
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
 	-moz-transition: all .6s ease-in-out;
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
 	width:385px !important;
 	height:290px;
     z-index:200;
-    background: #212121;
     background: #212121 url(../imgs/img_video_bg.png) 100% 100% no-repeat;
 }
 #remote-media-streams {
@@ -261,11 +237,6 @@ video
     top:0;
     padding:0;
     margin:0;
-    -ms-transition: opacity 3s, -webkit-transform 3s;
-    transition: opacity 3s, -webkit-transform 3s;
-    -webkit-transition: opacity 3s, -webkit-transform 3s;
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
 	-moz-transition: all .6s ease-in-out;
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
@@ -299,8 +270,7 @@ video
     float:right;
     top:190px;
     right:20px;
-    width:100px;
-    width:0px;
+    width:0;
     height:82px;
     overflow:hidden;
     -webkit-transition: width 1s;
@@ -322,7 +292,6 @@ video
 div.ccbutton
 {
     position: relative;
-    margin: 0;
     height: 28px;
     width: 45px;
     margin:6px 0 0 16px;
@@ -333,15 +302,14 @@ div.ccbutton
     -moz-border-radius: 6px;
     border-radius: 6px;
     background: #eee;
-    -moz-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    -webkit-box-shadow: 0px 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
-    box-shadow: 0px 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
+    -moz-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    -webkit-box-shadow: 0 1px 3px #fff inset, 0 1px 0 #EBEBEB !important;
+    box-shadow: 0 1px 1px #fff inset, 0 1px 0 #EBEBEB !important;
     cursor:default;
 }
 #btn-video-share
 {
-    background: url("../imgs/buttons/but_share_screen_disabled.png");
-    background-position: 0 0;
+    background: url("../imgs/buttons/but_share_screen_disabled.png") 0 0;
     height: 28px;
     width: 140px;
     display: inline-block;
@@ -470,17 +438,12 @@ input.sendField
 	width: inherit;
 	height: inherit;
 	background: #fff;
-
 	-webkit-transform: rotateX(0deg) rotateY(0deg);
 	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
-
 	-moz-transform: rotateX(0deg) rotateY(0deg);
-	-moz-transform-style: preserve-3d;
 	-moz-backface-visibility: hidden;
-
 	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
 	-moz-transition:  all .6s ease-in-out;
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
@@ -499,21 +462,13 @@ input.sendField
 	-webkit-transform: rotateY(180deg);
 	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
-
 	-moz-transform: rotateY(180deg);
-	-moz-transform-style: preserve-3d;
 	-moz-backface-visibility: hidden;
-
 	-ms-transform: rotateY(180deg);
-	-ms-transform-style: preserve-3d;
-	-ms-backface-visibility: hidden;
-
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
 	transform: rotateY(180deg);
-
 	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
 	-moz-transition: all .6s ease-in-out;
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
@@ -534,7 +489,6 @@ input.sendField
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    overflow-y:scroll;
     background:#fff;
     padding:0;
     margin:0 0 0 40px;
@@ -551,7 +505,6 @@ input.sendField
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    overflow-y:scroll;
     background:#fff;
     padding:0;
     margin:0 0 0 40px;
@@ -590,7 +543,7 @@ input.sendField
     position:absolute;
     overflow: auto;
     overflow-x: hidden;
-    border:0px solid red;
+    border:0 solid red;
 }
 .comcenter .chatContacts ul, .comcenter .chatGroupContacts ul{
     width: 340px;
@@ -635,14 +588,12 @@ input.sendField
 }
 .comcenter div.gender_male
 {
-    background:transparent 10px  0 no-repeat;
-    background-image:url(../imgs/chat/avatar_m.gif);
+    background:transparent url(../imgs/chat/avatar_m.gif) 10px  0 no-repeat;
     background-origin: padding-box;
 }
-.comcenter div.gender_female
+.comcenter div .gender_female
 {
-    background:transparent 10px  0 no-repeat;
-    background-image:url(../imgs/chat/avatar_f.gif);
+    background:transparent url(../imgs/chat/avatar_f.gif) 10px 0 no-repeat;
     background-origin: padding-box;
 }
 

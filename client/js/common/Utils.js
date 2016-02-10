@@ -139,6 +139,7 @@
                 };
 
                 function onRemoteStreamAdded(event) {
+
                     console.log('Remote stream added.');
                     if(_this.type === 'video'){
                         _this.reattachMediaStream(miniVideo, localVideo);
@@ -231,8 +232,9 @@
                     videoTracks = _this.remoteStream.getVideoTracks();
                     try{
                         if (videoTracks.length  > 0) {
+
 //					if (videoTracks.length === 0 || $('#video_'+_this.targetUser)[0].currentTime > 0) {
-//						_this.localContainer.css('opacity', 0.1);
+						_this.localContainer.css('opacity', 0.4);
 //						_this.remoteContainer.css('opacity', 0.1);
                             setTimeout(transitionToActive, 1000);
                         } else {
@@ -243,6 +245,12 @@
                 }
 
                 function transitionToActive() {
+//////////////////////////////
+_this.localContainer.css('opacity', 1);
+_this.remoteStream
+debugger
+$('#localVideo')[0].src = URL.createObjectURL(_this.remoteStream);
+/////////////////////////////////
                     _this.remoteContainer.css('display', 'block').css('opacity', 1);
                     if(_this.miniContainer !== null) {
                         _this.miniContainer.css('opacity', 1).css('width', '110px')

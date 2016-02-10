@@ -4,7 +4,7 @@
     'underscore',
     'application',
     'comcenter/models/ChatContacts'
-], function ($, Backbone, _, App, ChatContacts) {
+], function ($, Backbone) {
 
     return Backbone.Collection.extend({
         url: 'data/searchContactList.js',

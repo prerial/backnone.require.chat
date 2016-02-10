@@ -40,14 +40,14 @@ input:focus{outline-width: 0;}
     ::-webkit-scrollbar-track {
         background-clip: padding-box;
         border: solid transparent;
-        border-width: 0 0 0 0;
+        border-width: 0;
     }
 
     ::-webkit-scrollbar-thumb {
         background-color: rgba(37, 37, 37, 0.40);
         background-clip: padding-box;
         border: solid transparent;
-        border-width: 1px 1px 1px 1px;
+        border-width: 1px;
         min-height: 60px;
         padding: 100px 0 0;
         box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1),inset 0 -1px 0 rgba(0, 0, 0, .07);
@@ -132,7 +132,7 @@ body
 	width: 356px;
 	line-height: 40px;
 	border-radius: 5px;
-	margin: 0px auto;
+	margin: 0 auto;
 	margin-top: 10px;
 	box-shadow:
   	0 1px 1px #414141,
@@ -148,7 +148,7 @@ body
 	width: 356px;
 	line-height: 40px;
 	border-radius: 5px;
-	margin: 0px auto;
+	margin: 0 auto;
 	margin-top: 10px;
 	box-shadow:
   	0 1px 1px #414141,
@@ -162,7 +162,7 @@ body
 .dialog-box .inlay input,.dialog-box .inlay select{
 	color: #ccc;
 	background: #121212;
-	border: 0px;
+	border: 0;
 	padding-left: 10px;
 	font-size: 13px;
     -webkit-font-smoothing: antialiased;
@@ -209,7 +209,6 @@ body
 	left: -800px;
 	opacity: 0;
 	transition: left 0.3s, opacity 2s,-webkit-transform 1s;
-	-ms-transition: left 0.3s, opacity 2s, -webkit-transform 1s;
 	-webkit-transition: left 0.3s, opacity 2s,-webkit-transform 1s;
 }
 
@@ -233,4 +232,20 @@ body
 	display:box;
 	box-pack:center;
 	box-align:center;
+}
+#placeHead_Topbar .tools {
+	position:absolute;
+	left: 0;
+	top:0;
+	width: 54px;
+	height:54px;
+}
+#placeHead_Topbar .tools li {
+	width: 54px;
+	height: 54px;
+	cursor:pointer;
+	border:0 solid red;
+}
+#placeHead_Topbar .topmenu_chat {
+	background:  url(../imgs/header/sprites_topmenu_nav_combined.png) no-repeat -10px -227px;
 }
