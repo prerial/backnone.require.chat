@@ -62,13 +62,13 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                 App.eventManager.trigger('hideAllPopUps');
             }, 100);
         }
-        console.log("clicked button Comcenter")
+//        console.log("clicked button Comcenter")
     };
     var removeCall = function () {
         setTimeout(function () {
             App.eventManager.trigger('removeCall');
         }, 100);
-        console.log("clicked button removeCall")
+//        console.log("clicked button removeCall")
     };
     var appWorkflow = function () {
         var arg = arguments[0];
@@ -81,9 +81,7 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                 });
                 dialog = Utils.createDialog({ view: cView });
                 dialog.open();
-                console.debug("Dialog Login Opened");
-//               App.login = new Login();
-//                App.root.append(App.login.render().el);
+//                console.debug("Dialog Login Opened");
                break;
             case 'authenticated':
                 /////////////////////// Test for Chat /////////////////////////////////////
@@ -91,26 +89,29 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                 //////////////////////////////////////////////////////////////////////////////
                 App.authenticated = true;
                 App.user = InviewApp.Config.User;
-                App.video = {};
-                App.video.moderator = false;
-                App.video.started = false;
-                App.video.videoRoom = null;
-                App.audio = {};
-                App.audio.moderator = false;
-                App.audio.started = false;
-                App.audio.audioRoom = null;
-//                App.video.sessionid = InviewApp.Config.User.vrport;
-                App.chat = {};
-                App.chat.models = {};
-                App.chat.alerts = {};
-                App.chat.visible = false;
-                App.chat.conversations = {};
-                App.chat.conversations.active = null;
-                App.chat.conversations.display = {};
-                App.chat.conversations.connections = {};
-                //                App.chat.conversations.connections[InviewApp.Config.User.chid] = {};
-                App.chat.models.UserContact = new ContactModel(InviewApp.Config.User);
-                App.chat.models.DefaultContact = new ContactModel(InviewApp.Config.InitContactData);
+                App.video = {
+                    moderator: false,
+                    started: false,
+                    videoRoom: null
+                };
+                App.audio = {
+                    moderator: false,
+                    started: false,
+                    audioRoom: null
+                };
+                App.chat = {
+                    models: {
+                        UserContact: new ContactModel(InviewApp.Config.User),
+                        DefaultContact: new ContactModel(InviewApp.Config.InitContactData)
+                    },
+                    alerts: {},
+                    visible: false,
+                    conversations: {
+                    active: null,
+                        display: {},
+                        connections: {}
+                    }
+                };
 
                 App.chat.conversations.webSocket = new NodeWebSocket({
                     websocket: SocketIO,
@@ -118,8 +119,6 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                     onmessage:     function(data){
                         App.eventManager.trigger("serverMessage", { data: data });
                     },
-//                    $('#messages').append($('<li>').text(data.type));},
-//                    url: 'https://chat.firebaseIO.com/prerial/',
                     userid: App.chat.models.UserContact.get('chid'),
                     useStatus: true
                 });
@@ -131,12 +130,12 @@ define(['jquery', 'backbone', 'underscore', 'application', 'socketio', 'websocke
                 });
                 App.chat.conversations.webSocket.initialize();
  */
-               $('.topmenu_chat').css('display', 'block');
-                if (!_this.chatPopup) {
-                    _this.chatPopup = new ComCenter({
-                        el: 'div#comcenter'
-                    });
-                }
+                $('.topmenu_chat').css('display', 'block');
+                    if (!_this.chatPopup) {
+                        _this.chatPopup = new ComCenter({
+                            el: 'div#comcenter'
+                        });
+                    }
                 break;
         }
     };

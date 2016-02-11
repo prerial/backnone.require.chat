@@ -71,7 +71,7 @@ define([
             });
             $(window).on('resize', this.resize);
             $(window).on('beforeunload', function () {
-            	console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
+//            	console.debug('Update presence: offline' + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                 App.chat.models.UserContact.set('presence', 'offline');
             });
             $('.topmenu_chat')[0].click();
@@ -251,7 +251,7 @@ define([
                             var presence = App.chat.models.UserContact.get('presence');
                             App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }));
                             //                            App.chat.models.UserContact.set('presence', 'offline');
-            				console.debug('Update presence: ' + presence + ' Id: ' + App.chat.models.UserContact.attributes.chid);
+//            				console.debug('Update presence: ' + presence + ' Id: ' + App.chat.models.UserContact.attributes.chid);
                             App.chat.models.UserContact.set('presence', presence);
                         }
                         break;
@@ -323,7 +323,7 @@ define([
                         try {
                             if (App.chat.ContactList[result.chid]) {
                                 //                                App.chat.ContactList.presence = result.data.presence;
-	            		console.debug('Update presence: ' + result.data.presence + ' Id: ' + result.chid);
+//	            		console.debug('Update presence: ' + result.data.presence + ' Id: ' + result.chid);
                                 App.chat.ContactList[result.chid].model.attributes['presence'] = result.data.presence;
                                 App.chat.ContactList[result.chid].el.find('.presence').removeClass('offline').removeClass('online').removeClass('busy').removeClass('away').addClass(result.data.presence);
                             }
@@ -359,7 +359,7 @@ define([
 //                            pre.css('word-wrap', 'break-word');
 //                            pre.css('color', '#109E9C');
                             pre.html(App.chat.ContactList[result.chidFrom].title + ': ' + result.message);
-                            console.log(result.message);
+ //                           console.log(result.message);
                             App.chat.conversations.display[result.chidFrom].popup.append(pre)
                         }
                         break;

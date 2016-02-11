@@ -30,7 +30,7 @@ define([
         render: function () {
             var dispinfo = $(this.el).find('.infoContact').css('display');
             var dispdel = $(this.el).find('.deleteContact').css('display');
-            console.log("render Contact " + this.model.attributes.chid);
+//            console.log("render Contact " + this.model.attributes.chid);
             var template = _.template(Tpl, { contact: this.model.attributes });
             $(this.el).html(template);
             $(this.el).find('.infoContact').css('display', dispinfo);

@@ -36,9 +36,9 @@
             this.change({ 'profile': arg.attributes });
         },
         notify: function () {
-            console.log('Contact notify');
+//            console.log('Contact notify');
             if(this.changed.presence){
-            	console.debug('Update presence: ' + this.changed.presence + ' Id: ' + this.attributes.chid);
+//            	console.debug('Update presence: ' + this.changed.presence + ' Id: ' + this.attributes.chid);
                 App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': this.attributes.chid, 'data': this.attributes }))
             } else {
                 App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updateContact', 'chid': this.attributes.chid, 'data': this.attributes }))
