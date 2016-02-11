@@ -59,7 +59,7 @@
                         _this.peers[_this.user].onicecandidate = onIceCandidate;
                         _this.peers[_this.user].onaddstream = onRemoteStreamAdded;
                         _this.peers[_this.user].onremovestream = onRemoteStreamRemoved;
-                        console.log('Created RTCPeerConnnection with: ', iceServers, InviewApp.Config.Constrains.MediaConstraints[_this.type]);
+//                        console.log('Created RTCPeerConnnection with: ', iceServers, InviewApp.Config.Constrains.MediaConstraints[_this.type]);
                     } catch (e) {
                         console.log('Failed to create PeerConnection, exception: ' + e.message);
                         alert('Cannot create RTCPeerConnection object; \
@@ -83,8 +83,8 @@
 
                 function sendMessage(message) {
                     var msgString = JSON.stringify(message);
-                    console.log('C->S: ', message.sdp? message.sdp: message);
-                    console.log('=======================================');
+//                    console.log('C->S: ', message.sdp? message.sdp: message);
+//                    console.log('=======================================');
                     App[_this.type][_this.type + 'Socket'].send(message);
                 }
 
@@ -248,7 +248,7 @@
 //////////////////////////////
 _this.localContainer.css('opacity', 1);
 _this.remoteStream
-debugger
+//debugger
 $('#localVideo')[0].src = URL.createObjectURL(_this.remoteStream);
 /////////////////////////////////
                     _this.remoteContainer.css('display', 'block').css('opacity', 1);

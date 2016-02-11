@@ -75,7 +75,7 @@ define([
                         break;
                     case 'videooffer':
                         if (!App.video.moderator) {
-                            console.debug('Received Offer: ', response.sdp);
+//                            console.debug('Received Offer: ', response.sdp);
                             response.type = 'offer';
                             var sessionDescription = new RTCSessionDescription(response);
                             App.video.videoRoom.peers[App.video.videoRoom.user].setRemoteDescription(sessionDescription);
@@ -84,7 +84,7 @@ define([
                         break;
                     case 'videoanswer':
                         if (App.video.moderator) {
-                            console.debug('Received Answer: ', response.sdp);
+//                            console.debug('Received Answer: ', response.sdp);
                             response.type = 'answer';
                             App.video.videoRoom.peers[App.video.videoRoom.user].setRemoteDescription(new RTCSessionDescription(response));
                         }
@@ -260,7 +260,7 @@ define([
         },
 
         setPresence: function (type) {
-            console.debug('Update presence: ' + type + ' Id: ' + App.chat.models.UserContact.attributes.chid);
+//            console.debug('Update presence: ' + type + ' Id: ' + App.chat.models.UserContact.attributes.chid);
             App.chat.models.UserContact.attributes['presence'] = type;
             App.chat.conversations.webSocket.doSend(JSON.stringify({ 'type': 'updatePresense', 'chid': App.chat.models.UserContact.attributes.chid, 'data': App.chat.models.UserContact.attributes }))
             App.chat.UserContact.model.attributes['presence'] = type;
