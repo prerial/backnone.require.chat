@@ -1,7 +1,5 @@
 {
-  "name"         : "node-backbone-socket.io",
-  "version"      : "0.0.0",
-  "description"  : "Communication Center",
+  "name" : "node-backbone-socket.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/prerial/backnone.require.chat.git"
@@ -12,8 +10,11 @@
   "license"       : "MIT",
   "author"       : "MG",
   "dependencies" : {
-    "ejs": "~2.0",
-    "express": "~3.4.4",
-    "socket.io": "~1.0"
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "socket.io": "~1.7.2"
+  },
+  "scripts": {
+    "prestart": "npm install"
     }
   }
